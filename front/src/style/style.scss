@@ -1,0 +1,1464 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+/* 메인 컨테이너에 대한 스타일 */
+.main {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+/* 로고에 대한 스타일 */
+.Logo {
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    top: 30px;
+    left: 5%;
+}
+.MedGuideContainer{
+    position: absolute;
+    margin-top: 60vw;
+    width:100%;
+    height: 100vh*0.5;
+
+}
+/* 구름 배경에 대한 스타일 */
+.background {
+    position: absolute;
+    margin-top: 30vh;
+    width: 100vw;
+    height: 100vw*0.33; /* Adjust based on your actual image height */
+    min-height: 30vh;
+    background-image: url("../img/bg.svg");
+    background-size:cover; /* or background-size: contain; */
+    background-repeat: no-repeat;
+    background-position: center;
+
+  }
+.text1{
+/* 내가 먹는 약, 안전할까? */
+
+position: absolute;
+width: 510px;
+height: 66px;
+font-family: 'Pretendard';
+margin-top: 7vw;
+margin-left: 23.5vw;
+font-style: normal;
+font-weight: 700;
+font-size: 2.5vw;
+line-height: 66px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+
+}
+.text2{
+    /* 한 눈에 보는 약 정보 */
+position: absolute;
+width: 440px;
+height: 66px;
+margin-left: 23.5vw;
+margin-top: 11vw;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 2.5vw;
+line-height: 66px;
+/* identical to box height */
+display: flex;
+align-items: center;
+color: #FFFFFF;
+}
+.Allergenie_Text{
+    /* Allergenie */
+
+    position: absolute;
+    width: 440px;
+    height: 66px;
+    margin-left: 23.5vw;
+    margin-top: 20vw;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4vw;
+    line-height: 66px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+
+
+}
+.text-info{
+
+position: absolute;
+// width: 580px;
+// height: 85px;
+// left: 360px;
+// top: 460px;
+position: absolute;
+    width: 440px;
+    height: 66px;
+    margin-left: 23.5vw;
+    margin-top: 26vw;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 0.2vw*3;
+line-height: 12px;
+display: flex;
+align-items: center;
+letter-spacing: -0.05em;
+
+/* g 3 */
+color: #DFDFDF;
+
+
+}
+.goorm1 {
+    position: absolute;
+    width: 21vw; /* 원하는 너비로 조정 */
+    height: 210px;
+    margin-left: -2vw;
+    margin-top: 12vw;
+    background: url("../img/goorm1.svg") center center no-repeat;
+    background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+    filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));;
+    transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+}
+.goormbig {
+    /* 구름캐릭터_대지 1_대지 1 1 */
+    position: absolute;
+    width: 30vw;
+    height: 20vw;
+    margin-left: 63.5vw;
+    margin-top: 40vh*0.6/2;
+    background: url("../img/goormbig.svg") center center / contain,
+                url("../img/goormbig.svg") center center / contain,
+                url("../img/goormbig.svg") center center / contain;
+    
+    filter: drop-shadow(4px 4px 20px rgba(0, 9, 88, 0.2));
+    background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+    background-repeat: no-repeat;
+    transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+}
+.goormsmallneighbor{
+    /* 구룸 일러스트_대지 1 1 */
+
+position: absolute;
+width: 10vw;
+height: 15vh;
+margin-left: 80.5vw;
+margin-top:20vw;
+
+background: url("../img/goormsmallneighbor.svg");
+filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+background-repeat: no-repeat;
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+
+}
+.goormsmall{
+    /* 구룸 일러스트_대지 1 3 */
+position: absolute;
+width: 10vw;
+height:15vh;
+margin-left: 20vw;
+margin-top: -2.5*2vh;
+background: url("../img/goormsmall.svg");
+filter: drop-shadow(0px 0px 20px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+background-repeat: no-repeat;
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+
+}
+.goormsmallmid{
+    /* 구룸 일러스트_대지 1 2 */
+
+position: absolute;
+width: 12.5vw;
+height: 17vw;
+margin-left: 55vw;
+margin-top: 30vw;
+
+background: url("../img/goormmiddlesmall.svg");
+background-repeat: no-repeat;
+filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+
+}
+
+/* 검색 컨테이너에 대한 스타일 */
+.search {
+    box-sizing: border-box;
+    position: absolute;
+    width: 550px;
+    height: 40px;
+    max-width: 90vw;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    border: 1px solid #AAB3FF;
+    box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+    border-radius: 10px;
+    z-index: 4;
+}
+
+/* 검색 바 입력에 대한 스타일 */
+.searchbar {
+    position: absolute;
+    left: calc(50% - 215px);
+    top: 17.5%;
+    width: 490px;
+    height: 40px;
+    border-radius: 16px;
+    border: none;
+    background: transparent;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    outline: 0;
+    z-index: 4;
+}
+.CompletionContainer{
+/* Rectangle 51 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 550px;
+height: 198px;
+left: 50%;
+transform: translate(-50%, -50%);
+top: 250px;
+
+background: #FFFFFF;
+/* main color */
+border: 1px solid #AAB3FF;
+box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+border-radius: 16px;
+z-index: 3;
+
+}
+.autocomplete-list {
+    /* 항 히스타민제 */
+    position: relative;
+    width: 100%;
+    height: 18px;
+    top: 20px;
+    left: -35px;
+    margin-left: calc(50% - 240px);
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 37px;
+    align-items: center;
+    list-style: none;
+
+    /* g 2 */
+    color: #878787;
+    
+    /* Allow content to overflow */
+    overflow: visible;
+}
+.auto-lists{
+    position: absolute;
+    text-indent: 50px;
+    width: 100%;
+    height:100%;
+}
+
+.auto-lists :hover {
+    background: #CBCBCB;
+    color: #FFFFFF;
+}
+
+/* 의료 아이콘에 대한 스타일 */
+.MedIcon {
+    position: absolute;
+    width: 29px;
+    top: 18%;
+    left: calc(50% - 265px);
+    z-index: 4;
+}
+
+/* 검색바  선에 대한 스타일 */
+.line {
+    position: absolute;
+    width: 27px;
+    height: -30px;
+    left: calc(50% - 240px);
+    top: 20%;
+    border: 0.5px solid #AAB3FF;
+    transform: rotate(90deg);
+    z-index: 4;
+}
+
+/* 검색 아이콘에 대한 스타일 */
+.searchIcon {
+    position: absolute;
+    top: 18.5%;
+    right: calc(50% - 257.5px);
+    width: 22.5px;
+    z-index: 4;
+}
+
+
+.medGuide{
+    /* 지니가 알려주는 올바른 약 복용법 */
+
+position: absolute;
+width: 312px;
+height: 29px;
+left: calc(50% - (-90px));
+top: 5vh;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 20px;
+line-height: 29px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: right;
+
+/* snb color 2 */
+color: #000958;
+
+
+}
+.medGuideBox1{
+    /* Group 439 */
+
+position: absolute;
+width: 680px;
+height: 200px;
+left: calc(50% - 680px/2 + 10px);
+margin-top: 12.5vh;
+
+background: url("../img/mainp1.svg");
+background-size: cover;
+background-repeat: no-repeat;
+border-radius: 16px;
+}
+.medGuideBox1 h1{
+    /* 약은 물과 함께, */
+
+position: absolute;
+width: 190px;
+height: 38px;
+left: 425px;
+top: 30px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+display: flex;
+align-items: center;
+text-align: right;
+
+color: #FFFFFF;
+
+
+}
+.medGuideBox1 span{
+    /* 약은 물과 함께 복용하는 것이 가장 좋습니다. 물과 함께 마시면 약을 녹여 흡수를 돕고, 식도나 위에 달라붙지 않도록 해요. 또한 위장장애의 위험도 줄일 수 있어요. */
+
+position: absolute;
+width: 440px;
+height: 38px;
+left: 175px;
+top: 125px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 13px;
+line-height: 19px;
+display: flex;
+align-items: center;
+text-align: right;
+
+color: #FFFFFF;
+
+
+}
+.goormGuide{
+    /* 구름2_대지 1 1 */
+
+position: absolute;
+width: 283px;
+height: 190px;
+left: calc(50% - 450px);
+margin-top:-1vh;
+
+background: url("../img/goormguide.svg");
+filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+
+}
+.medGuideBox2{
+/* Group 441 */
+
+position: absolute;
+width: 680px;
+height: 200px;
+left: calc(50% - 250px/2 - 205px);
+margin-top: 42.5vh;
+
+background: url("../img/mainp2.svg");
+background-size: cover;
+background-repeat: no-repeat;
+border-radius: 16px;
+
+
+}
+
+.goormGuideFooter{
+    /* 구룸 일러스트_대지 1 5 */
+
+position: absolute;
+width: 132px;
+height: 86px;
+left: calc(50% - (-260px));
+margin-top: 62.5vh;
+
+background: url("../img/goormguidefooter.svg");
+filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+
+}
+.MedKnowledgeContainer{
+    position: absolute;
+    margin-top:42.5vw;
+    width:100%;
+    height: 100vh*0.5;
+}
+.MedKnowledge{
+    /* 구름 상식 */
+
+position: absolute;
+width: 89px;
+height: 29px;
+left: calc(50% - 330px);
+margin-top: 110vh;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 20px;
+line-height: 29px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+/* snb color 2 */
+color: #000958;
+
+
+}
+.KnowledgeBox1{
+    /* Group 442 */
+
+position: absolute;
+width: 22vw;
+height: 200px;
+left: 28.5vw;
+margin-top: 117.5vh;
+background: url("../img/mainp3.svg");
+background-size: cover;
+background-repeat: no-repeat;
+border-radius: 16px;
+
+}
+.KnowledgeBox2{
+    /* Group 445 */
+
+position: absolute;
+width: 22vw;
+height: 200px;
+left: 51.5vw;
+margin-top: 117.5vh;
+background: url("../img/mainp4.svg");
+background-size: cover;
+background-repeat: no-repeat;
+border-radius: 16px;
+
+}
+
+.KnowledgeGoorm{
+    /* 구룸 일러스트_대지 1 6 */
+
+position: absolute;
+width: 165px;
+height: 120px;
+left: calc(50% - 425px); 
+margin-top: 138vh;
+
+background: url("../img/KnowledgeGoorm.svg");
+filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+}
+.Footer{
+
+position: absolute;
+width: 100vw;
+height: 80px;
+
+/* sub color 1 */
+background: #DBE3FF;
+box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+
+}
+.Footer_Text{
+    /* 이용약관 | 개인정보처리방침 | 책임의 한계와 법적고지 | 회원정보 고객센터AllerGenie Copyright @ ALLERGENIE Corp. All Rights Reserved */
+
+position: absolute;
+width: 100vw;
+height: 54px;
+display: flex;
+justify-content: center;
+bottom: 10px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* snb color 2 */
+color: #000958;
+
+}
+.top-info{
+    /* 상단 정보 */
+    position: absolute;
+    width: 333px;
+    height: 45px;
+    right: calc(50% - 650px);
+    top: 40px;
+}
+
+
+.Profile_picture{
+    /* 프로필 사진 */
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    right: calc(50% - 360px);
+    top: 40px;
+}
+.Profile_Avatar{
+    /* 구름캐릭터_대지 1_대지 1 2 */
+
+position: absolute;
+width: 85px;
+height: 85px;
+right: calc(50% - 385px);
+top: 32.5px;
+
+background: url("../img/goormAvatar.svg");
+filter: drop-shadow(4px 4px 20px rgba(0, 9, 88, 0.2));
+background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+
+}
+.Ellipse{
+    /* Ellipse 35 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 45px;
+height: 45px;
+right: calc(50% - 360px);
+top: 40px;
+border-radius: 50%;
+
+background: linear-gradient(180deg, #DFDFDF 0%, rgba(217, 217, 217, 0) 100%);
+/* snb color 2 */
+border: 2px solid #000958;
+
+}
+.greetings {
+    position: absolute;
+    width: 150px;
+    height: 19px;
+    right: calc(50% - 515px);
+    top: 52px;
+  
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  
+    /* Added styles for ellipsis and preventing text wrapping */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .word2 {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 10px;
+  }
+
+.my-page{
+    /* 마이페이지 */
+
+    position: absolute;
+    width: 61px;
+    height: 17px;
+    right: calc(50% - 560px);
+    top: 54px;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+.nav{
+    position: absolute;
+    right: 700px;
+}
+.logout{
+
+    /* 로그아웃 */
+
+    position: absolute;
+    width: 49px;
+    height: 17px;
+    right: calc(50% - 630px);
+    top: 54px;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.line-16{
+    /* Line 16 */
+
+    position: absolute;
+    width: 20px;
+    height: 0px;
+    right: calc(50% - 500px);
+    top: 62.5px;
+
+    border: 0.5px solid #000000;
+    transform: rotate(90deg);
+}
+
+.line-17{
+    /* Line 17 */
+
+    position: absolute;
+    width: 20px;
+    height: 0px;
+    right: calc(50% - 580px);
+    top: 62.5px;
+
+    border: 0.5px solid #000000;
+    transform: rotate(90deg);
+}
+
+/*검색페이지*/
+.AllergicAdd{
+    /* Rectangle 64 */
+
+position: absolute;
+width: 90px;
+height: 25px;
+left: calc(50% + 185px);
+top: 225px;
+
+/* snb color 2 */
+background: #000958;
+border-radius: 30px;
+
+}
+.AllergicAdd span{
+    /* 알러지 등록 */
+
+position: absolute;
+width: 56px;
+height: 23px;
+left: calc(50% - 15.5px);
+top: 0.5px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 11px;
+line-height: 14px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+.searchvalue{
+    /* “ 항 ”이 포함된 검색 결과 */
+
+position: absolute;
+width: 384px;
+height: 18px;
+margin-top: 29vh;
+margin-left: 16vw;
+left: calc(50% - 384px/2 - 320px);
+
+font-family: 'Acme';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 30px;
+display: flex;
+align-items: center;
+
+
+/* main color */
+color: #000;
+
+
+}
+.plus-circle{
+    /* plus-circle */
+position: absolute;
+width: 13px;
+height: 13px;
+left:calc(50% - 32.5px);
+top:5.5px;
+}
+.ListAllerge{
+    position: absolute;
+    width: 100%;
+    top: 30vh;
+}
+.AllergeContainerList {
+    box-sizing: border-box;
+width: 550px;
+height: 150px;
+margin-left: calc(50% - 275px);
+margin-top: 40px;
+background: #FFFFFF;
+/* main color */
+border: 1px solid #AAB3FF;
+box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+border-radius: 16px;
+}
+.highlighted-mark {
+    color: #AAB3FF; /* or any other color you want */
+    background: none;
+  }
+.MedTitleList{
+    /* 항히스타민제 */
+
+    width: 100px;
+    height: 15px;
+    margin-top: 2.5vh;
+    margin-left: 2.5vw;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+
+/* main color */
+color: #000;
+
+
+}
+.PaginationButtons{
+    /* Group 464 */
+
+position: absolute;
+width: 178px;
+height: 19px;
+left: 48vw;
+top: 1225px;
+display: flex;
+gap: 10px;
+
+color: #000000;
+
+}
+.MedIngredientsInfoList{
+    /* 항히스타민 작용 외에 국소마취 ·교감신경차단 ·부교감신경차단 ·진정 ·진토작용이 있다. 주로 알레르기증 ·기관지천식 ·두드러기 ·약물진(藥物疹) ·혈청병 외에, 감기의 초기나 차멀미에 쓰인다. 또 연고제로서 알레르기성 피부병에도 쓰인다. 내복을 할 때는 졸음이 오거나 소화불량 ·흥분 등의 부작용이 있다. */
+position: absolute;
+margin-top: 2.5vh;
+margin-left: 2.5vw;
+
+font-family: 'Acme';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 30px;
+/* or 188% */
+display: flex;
+align-items: center;
+
+/* main color */
+color: #000;
+
+
+}
+.AllergeContainer{
+    /* Rectangle 51 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 550px;
+height: 200px;
+left: calc(50% - 275px);
+top: 270px;
+
+background: #FFFFFF;
+/* main color */
+border: 1px solid #AAB3FF;
+box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+border-radius: 16px;
+
+}
+.MedTitle{
+    /* 항 히스타민제 */
+
+position: absolute;
+width: 100px;
+height: 15px;
+left: calc(50% - 75px);
+top: 30px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+
+/* snb color 2 */
+color: #000958;
+
+
+}
+.MedIngredients{
+    /* Rectangle 82 */
+
+position: absolute;
+width: 54px;
+height: 15px;
+left: calc(50% - 75px);
+top: 55px;
+
+/* main color */
+background: #AAB3FF;
+border-radius: 30px;
+
+}
+.MedIngredients span{
+    /* 약의 성분 */
+
+position: absolute;
+width: 40.5px;
+height: 7.2px;
+left: calc(50% - 15px);
+top: 5px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 8px;
+line-height: 10px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+.MedIngredientsInfo{
+    /* 세포증식, 분화와 혈구 생성, 염증반응, 조직 재생과 신경전달 등에 관여하는 단백질 */
+
+position: absolute;
+width: 325px;
+height: 19px;
+left: calc(50% - 25px);
+top: 20px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight:500;
+font-size: 9.75px;
+line-height: 20px;
+/* or 143% */
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+}
+.MedEfficacy{
+    /* Rectangle 82 */
+
+position: absolute;
+width: 54px;
+height: 15px;
+left: calc(50% - 75px);
+top: 110px;
+
+
+/* main color */
+background: #AAB3FF;
+border-radius: 30px;
+
+}
+.MedEfficacy span{
+    /* 효능 및 효과 */
+
+position: absolute;
+width: 40.5px;
+height: 7.2px;
+left: calc(50% - 19px);
+top: 5px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 8px;
+line-height: 10px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+.MedEfficacyInfo{
+    /* 항히스타민제는 두드러기, 발적, 소양감 등의 알레르기성 반응에 관여하는 히스타민의 작용을 억제하는 약물이다. 알레르기성 질환 외에도 콧물, 재채기, 불면, 어지럼증, 구토 멀미 등을 완화하는데 사용된다. */
+
+position: absolute;
+width: 325px;
+height: 19px;
+left: calc(50% - 25px);
+top: 35px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 500;
+font-size: 9.75px;
+line-height: 15px;
+/* or 143% */
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+}
+.MedImageContainer{
+    /* Rectangle 81 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 150px;
+height: 150px;
+left: calc(50% - 250px);
+
+top: 23px;
+
+background: #FFFFFF;
+/* g 3 */
+border: 1px solid #DFDFDF;
+box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.2);
+border-radius: 16px;
+
+}
+.MedImageContainer img{
+    position: absolute;
+    width: 90%;
+    top: 25%;
+    margin-left: 5%;
+}
+.RelationMedContainer{
+    /* Rectangle 53 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 550px;
+left: calc(50% - 275px);
+height: 230px;
+top: 500px;
+display: flex;
+background: #FFFFFF;
+/* main color */
+border: 1px solid #AAB3FF;
+box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+border-radius: 16px;
+
+}
+.RelationMedInfo{
+    /* 관련 약 정보 */
+
+position: absolute;
+width: 115px;
+height: 15px;
+left: calc(50% - 255px);
+top: 15px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+
+/* snb color 2 */
+color: #000958;
+
+
+}
+.RelationMedImgContainer{
+    /* Rectangle 81 */
+
+box-sizing: border-box;
+width: 140px;
+height: 105px;
+left: calc(50% - 250px);
+margin-top: 60px;
+margin-left: 15px;
+margin-right: 15px;
+background: #FFFFFF;
+/* g 3 */
+border: 1px solid #DFDFDF;
+box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.2);
+border-radius: 16px;
+ 
+}
+.RelationImg{
+    margin-left: 2.5px;
+    margin-top: 10px;
+    width: 100px;
+    height: 80px;
+}
+.RelationMedTitle{
+    /* Rectangle 82 */
+
+width: 48px;
+height: 16px;
+margin-left: 27.5px;
+margin-top: 20px;
+/* main color */
+background: #AAB3FF;
+border-radius: 30px;
+}
+.RelationMedTitle span{
+    /* 지르텍 */
+justify-content: center;
+height: 100%;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 8px;
+line-height: 10px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+
+//부작용 컨테이너
+.SideEffect-Container{
+    /* Rectangle 52 */
+
+box-sizing: border-box;
+
+position: absolute;
+
+height: 300px;
+width: 550px;
+left: calc(50% - 275px);
+top: 760px;
+
+background: #FFFFFF;
+/* main color */
+border: 1px solid #AAB3FF;
+box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+border-radius: 16px;
+
+}
+.sideEffectText{
+/* 부작용 */
+
+position: absolute;
+width: 57px;
+height: 15px;
+left: calc(50% - 240px);
+top: 20px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+
+/* snb color 2 */
+color: #000958;
+
+
+}
+.sideEffectImgContainer{
+    position: absolute;
+    margin-top: 9vh;
+    margin-left: 7.5%;
+    width: 100%;
+    display: flex;
+    gap: 35px;
+}
+.sideEffectImgContainer img{
+    width: 30px;
+}
+.sideEffectTypeContainer{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    top: 110px;
+    gap: 16px;
+    margin-left: 28px;
+
+}
+.sideEffectType{
+    width: 50px;
+    height: 15px;
+    background: #AAB3FF;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 8px;
+    line-height: 10px;
+    color: #FFFFFF;
+}
+.sideEffectInfo{
+    /* 약물의 종류에 따라 정도가 다르지만 대표적인 부작용은 졸음, 진정작용과 같은 중추신경계 부작용이다. */
+    position: absolute;
+    width: 553px;
+    height: 17px;
+    left: calc(50% - 245px);
+    top: 140px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9.5px;
+    line-height: 17px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.sideEffectWarning{
+    /* 주의사항 & 해결방안 */
+    position: absolute;
+    width: 259px;
+    height: 15px;
+    left: calc(50% - 240px);
+    top: 170px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    /* snb color 2 */
+    color: #000958;
+}
+.sideEffectWarningInfo{
+    /* 자동차 운전이나 위험을 수반하는 기계조작, 집중을 요하는 작업에 종사하는 사람들은 복용하지 않도록 한다. 항콜린 작용에 의한 배뇨 및 시력장애가 나타날 수 있으므로 전립선비대증 환자나 녹내장 환자에게는 투여하지 않도록 한다. 중추신경억제제 또는 항콜린성 약물과 병용투여 시 용량 조절이 요구될 수 있다. 졸음, 진정작용과 같은 중추신경계 부작용이 증가될 수 있으므로 항히스타민제 복용 시 알코올을 섭취하지 않도록 한다. */
+
+    position: absolute;
+    width: 460px;
+    height: 68px;
+    left: calc(50% - 245px);
+    top: 210px;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9.5px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+//마이페이지
+.MyIcon{
+
+
+
+/* Ellipse 35 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 110px;
+height: 110px;
+left: calc(50% - 400px);
+top: 160px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+background: linear-gradient(180deg, #DFDFDF 0%, rgba(217, 217, 217, 0) 100%);
+/* main color */
+border: 2px solid #AAB3FF;
+border-radius: 50%;
+box-shadow: inset 6px 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+.MyIcon img{
+    width: 145px;
+    height: 145px;
+    margin-left: 0.4vw;
+
+}
+.MyProfile-username{
+    /* 김구름님, */
+
+position: absolute;
+width: 206px;
+height: 43px;
+margin-left: calc(50% - 260px);
+margin-top: 22vh;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 28px;
+line-height: 38px;
+display: flex;
+align-items: center;
+
+/* snb color 2 */
+color: #000958;
+
+
+}
+.MyProfile-email{
+
+
+/* Rectangle 60 */
+
+position: absolute;
+width: 277px;
+height: 33px;
+margin-left: calc(50% - 260px);
+margin-top: 29vh;
+
+/* snb color 2 */
+background: #000958;
+border-radius: 30px;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+.MedShouldNotTakeContainer{
+    /* 로그인창 */
+    position: absolute;
+    margin-top: 42vh;
+    left: calc(50% - 400px);
+    width: 800px;
+    min-height: 245px;
+    border-radius: 16px;
+    border: 1px solid #AAB3FF;
+    background: #FFF;
+    box-shadow: 0px 0px 25px 7px rgba(170, 179, 255, 0.30);
+}
+.MedShouldNotTakeContainer h1{
+    position: absolute;
+    margin-top: 4vh;
+    margin-left: 2vw;
+    color: #000958;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 800;
+}
+.Med{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 2px;
+}
+.addMedCircle{
+   /* Rectangle 64 */
+box-sizing: border-box;
+
+width: 85px;
+height: 30px;
+margin-left: 17.5px;
+margin-right: 10px;
+margin-top: 80px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+/* main color */
+border-radius: 30px;
+border: 2px solid var(--main-color, #AAB3FF);
+background: #FFF;
+/* 항 히스타민제 */
+color: #000;
+text-align: center;
+font-family: 'Pretendard';
+font-size: 16px;
+font-weight: 600;
+cursor: pointer;
+
+}
+.addMedCircle.selected {
+    background: #AAB3FF;
+    color: #FFF; 
+}
+
+
+.addMedSearch{
+    /* Rectangle 75 */
+
+position: absolute;
+width: 150px;
+height: 35px;
+left: 66.5vw;
+margin-top: 22vh;
+/* main color */
+background: #AAB3FF;
+border-radius: 30px;
+/* 약 정보 추가하기 */
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 13px;
+line-height: 19px;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+.addMedSearch img{
+    position: absolute;
+    left: 7%;
+    width: 15px;
+}
+.deleteMed{
+    /* Rectangle 76 */
+
+position: absolute;
+width: 150px;
+height: 35px;
+left: 66.5vw;
+margin-top: 29.5vh;
+
+/* N 1 */
+background: #FFB3B3;
+border-radius: 30px;
+/* 약 정보 삭제하기 */
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 800;
+font-size: 12px;
+line-height: 19px;
+display: flex;
+align-items: center;
+text-align: center;
+justify-content: center;
+
+color: #FFFFFF;
+
+cursor: pointer;
+
+
+}
+.deleteMed img{
+    position: absolute;
+    left: 7%;
+    width: 15px;
+}
