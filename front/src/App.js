@@ -54,7 +54,7 @@ const App = () => {
       <Routes>
         {/* Main 컴포넌트에 onLogout 함수를 전달하여 로그아웃 처리를 가능하게 합니다. */}
         <Route
-          path="/"
+          path="/home"
           element={
             <Main
               onSearch={handleSearchCallback}
@@ -65,8 +65,9 @@ const App = () => {
             />
           }
         />
+        <Route path="/" element={<LoginPage onLogin={handleLogin} />} />
         {/* LoginPage 컴포넌트에 onLogin 함수를 전달하여 로그인 처리를 가능하게 합니다. */}
-        <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
+
         <Route
           path="/register"
           element={<RegisterPage onRegister={handleRegister} />}

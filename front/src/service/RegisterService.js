@@ -38,13 +38,12 @@ const handleRegister = async (
     };
 
     const response = await axios.post(
-      `https://port-0-team-3-3szcb0g2blp12i5o9.sel5.cloudtype.app/api/v1/auth/signup`,
-      JSON.stringify(data),
+      `http://localhost:8000/api/v1/auth/signup`,
+      data,
       {
         headers: {
           "Content-Type": "application/json",
         },
-        withCredentials: true,
       }
     );
 
