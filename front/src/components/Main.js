@@ -25,25 +25,11 @@ const Main = ({
 
   const handleSearchCallback = async (query) => {
     setSearchQuery(query);
-    console.log(`검색어: ${query}`);
     const idFromQuery = params.get("id");
     var pageNo = 1;
     const userId = idFromQuery;
 
     try {
-      // 로컬 스토리지에서 accessToken 가져오기
-      const accessToken = localStorage.getItem("accessToken");
-
-      // 만약 accessToken이 있다면 헤더에 추가
-      if (accessToken) {
-        // axios 설정에서 헤더에 토큰을 추가
-        console.log(accessToken);
-        axios.defaults.headers.common[
-          "Authorization"
-        ] = `Bearer ${accessToken}`;
-      }
-
-      // Call the common onSearch callback
       onSearch(query, userId);
       onSearchList(query, pageNo);
 
