@@ -15,6 +15,8 @@ const RegisterPage = ({ onRegister }) => {
   const [isTyping, setIsTyping] = useState(false);
   const [isTypingEmail, setIsTypingEmail] = useState(false);
   const [emailValid, setEmailValid] = useState(false);
+  const [isTypingNickname, setIsTypingNickname] = useState(false);
+  const [nicknameValid, setNicknameValid] = useState(false);
   const navigate = useNavigate(); // react-router-dom의 useNavigate 훅
 
   const handleRegisterClick = () => {
@@ -55,6 +57,16 @@ const RegisterPage = ({ onRegister }) => {
 
   const handleEmailBlur = () => {
     setIsTypingEmail(false);
+  };
+  const handleNicknameChange = (e) => {
+    const newNickname = e.target.value;
+    setEmail(newNickname);
+    setIsTypingNickname(true);
+    nicknameValid(newNickname);
+  };
+
+  const handleNicknameBlur = () => {
+    setIsTypingNickname(false);
   };
   const goLogin = () => {
     navigate("/login");
@@ -142,6 +154,25 @@ const RegisterPage = ({ onRegister }) => {
                 onChange={(e) => setNickname(e.target.value)}
               />
             </div>
+            {!isTypingNickname && nickname && (
+              <div className="pw-message">
+                {nicknameValid ? (
+                  <>
+                    <img src={Valid} alt="Valid Password" />
+                    <span className="validateMessage">
+                      사용가능한 닉네임입니다.
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <img src={InValid} alt="Invalid Password" />
+                    <span className="validateMessage">
+                      사용 불가능한 닉네임입니다.
+                    </span>
+                  </>
+                )}
+              </div>
+            )}
           </section>
           <button className="registerBtn" onClick={handleRegisterClick}>
             가입하기
