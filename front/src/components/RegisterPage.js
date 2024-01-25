@@ -6,6 +6,8 @@ import Footer from "../module/Footer";
 import { ReactComponent as Register } from "../img/register.svg";
 import Valid from "../img/isCheckedTrue.svg";
 import InValid from "../img/invalid.svg";
+import checkEmail from "../service/checkEmail";
+import checkNickname from "../service/checkNickname";
 
 const RegisterPage = ({ onRegister }) => {
   const [email, setEmail] = useState(""); // 이메일 상태
@@ -15,14 +17,14 @@ const RegisterPage = ({ onRegister }) => {
   const [isTyping, setIsTyping] = useState(false);
   const [isTypingEmail, setIsTypingEmail] = useState(false);
   const [emailValid, setEmailValid] = useState(false);
-  const [isTypingNickname, setIsTypingNickname] = useState(false);
-  const [nicknameValid, setNicknameValid] = useState(false);
+  const [emailCheck, setEmailCheck] = useState(false);
+  const [nicknameCheck, setNicknameCheck] = useState(false);
   const navigate = useNavigate(); // react-router-dom의 useNavigate 훅
 
   const handleRegisterClick = () => {
     handleRegister(email, password, nickname, onRegister, navigate);
+    navigate("/");
   };
-
   const validatePassword = (password) => {
     // 영문+숫자, 8~16자 확인
     const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d).{8,16}$/;
@@ -58,18 +60,28 @@ const RegisterPage = ({ onRegister }) => {
   const handleEmailBlur = () => {
     setIsTypingEmail(false);
   };
-  const handleNicknameChange = (e) => {
-    const newNickname = e.target.value;
-    setEmail(newNickname);
-    setIsTypingNickname(true);
-    nicknameValid(newNickname);
-  };
-
-  const handleNicknameBlur = () => {
-    setIsTypingNickname(false);
-  };
   const goLogin = () => {
     navigate("/login");
+  };
+
+  const handleEmailCheck = async () => {
+    const check = await checkEmail(email);
+    if (check) {
+      alert("사용가능한 이메일입니다.");
+      setEmailCheck(check);
+    } else {
+      alert("사용 불가능한 이메일입니다.");
+    }
+  };
+
+  const handleNicknameCheck = async () => {
+    const check = await checkNickname(nickname);
+    if (check) {
+      alert("사용가능한 아이디입니다.");
+      setNicknameCheck(check);
+    } else {
+      alert("사용 불가능한 아이디입니다.");
+    }
   };
 
   return (
@@ -100,7 +112,7 @@ const RegisterPage = ({ onRegister }) => {
                   <>
                     <img src={Valid} alt="Valid Email" />
                     <span className="validateMessage">
-                      사용 가능한 이메일입니다.
+                      정규 표현식에 맞게 하셨습니다. 중복체크를 해주세요
                     </span>
                   </>
                 ) : (
@@ -113,6 +125,7 @@ const RegisterPage = ({ onRegister }) => {
                 )}
               </div>
             )}
+            <button onClick={handleEmailCheck}>중복체크</button>
             <div className="loginBox-contents">비밀번호</div>
             <div className="register-tf">
               <input
@@ -154,27 +167,13 @@ const RegisterPage = ({ onRegister }) => {
                 onChange={(e) => setNickname(e.target.value)}
               />
             </div>
-            {!isTypingNickname && nickname && (
-              <div className="pw-message">
-                {nicknameValid ? (
-                  <>
-                    <img src={Valid} alt="Valid Password" />
-                    <span className="validateMessage">
-                      사용가능한 닉네임입니다.
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <img src={InValid} alt="Invalid Password" />
-                    <span className="validateMessage">
-                      사용 불가능한 닉네임입니다.
-                    </span>
-                  </>
-                )}
-              </div>
-            )}
+            <button onClick={handleNicknameCheck}>중복체크</button>
           </section>
-          <button className="registerBtn" onClick={handleRegisterClick}>
+          <button
+            className="registerBtn"
+            disabled={!emailCheck || !nicknameCheck}
+            onClick={handleRegisterClick}
+          >
             가입하기
           </button>
         </article>
