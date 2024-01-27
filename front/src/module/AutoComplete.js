@@ -6,9 +6,6 @@ const AutoComplete = ({ inputValue, onItemSelect }) => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const loaderRef = useRef(null);
-  const accessToken = localStorage.getItem("accessToken");
-  axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-  axios.defaults.headers.common["Content-Type"] = "application/json";
 
   useEffect(() => {
     if (inputValue === "") {
@@ -17,11 +14,12 @@ const AutoComplete = ({ inputValue, onItemSelect }) => {
       setLoading(true);
       axios
         .get(
-          "https://port-0-team-3-3szcb0g2blp12i5o9.sel5.cloudtype.app/api/v1/home",
+          `http://localhost:8000/api/v1/home?search=${inputValue}&pageNo=${parseInt(
+            page
+          )}`,
           {
-            params: {
-              search: inputValue,
-              pageNo: parseInt(page),
+            headers: {
+              "Content-Type": "application/json",
             },
           }
         )
@@ -84,7 +82,7 @@ const AutoComplete = ({ inputValue, onItemSelect }) => {
   }, [inputValue, page, loading]);
 
   const handleItemClick = (item) => {
-    onItemSelect(item.약이름);
+    onItemSelect(item.name);
   };
 
   return (
@@ -93,7 +91,7 @@ const AutoComplete = ({ inputValue, onItemSelect }) => {
         <div className="auto-lists">
           {dropDownList.map((item, index) => (
             <li key={index} onClick={() => handleItemClick(item)}>
-              {item.약이름}
+              {item.name}
             </li>
           ))}
           {loading && <div>Loading...</div>}
