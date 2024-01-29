@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import MedIcon from "../img/medIcon.svg";
 import SearchIcon from "../img/SearchIcon.svg";
 import AutoComplete from "./AutoComplete";
@@ -6,7 +6,8 @@ import AutoComplete from "./AutoComplete";
 const SearchBar = ({ onSearch, value }) => {
   const [inputValue, setInputValue] = useState(value || ""); // Initialize with the value from props
   const [searchCompletionVisible, setSearchCompletionVisible] = useState(false);
-
+  const [shouldNotHideCompletion, setShouldNotHideCompletion] = useState(false);
+  const searchbarRef = useRef(null);
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       onSearch(inputValue);
@@ -17,22 +18,42 @@ const SearchBar = ({ onSearch, value }) => {
   const handleInputClick = () => {
     setSearchCompletionVisible(true);
   };
+  const handleSearchIconClick = () => {
+    onSearch(inputValue);
+    setSearchCompletionVisible(false);
+  };
 
   const handleItemSelect = (selectedItem) => {
     setInputValue(selectedItem);
     setSearchCompletionVisible(false);
   };
 
-  const showDropDownList = () => {
-    setSearchCompletionVisible(inputValue !== "");
+  useEffect(() => {
+    return () => {
+      setInputValue("");
+      setSearchCompletionVisible(false);
+    };
+  }, []);
+
+  const handleBodyClick = (e) => {
+    if (!searchbarRef.current.contains(e.target) && !shouldNotHideCompletion) {
+      setSearchCompletionVisible(false);
+    }
+    setShouldNotHideCompletion(false);
   };
 
   useEffect(() => {
-    showDropDownList();
-  }, [inputValue]);
+    document.body.addEventListener("mousedown", handleBodyClick);
+
+    return () => {
+      document.body.removeEventListener("mousedown", handleBodyClick);
+      setInputValue("");
+      setSearchCompletionVisible(false);
+    };
+  }, []);
 
   return (
-    <div>
+    <div ref={searchbarRef}>
       <div className="search"></div>
       <img className="MedIcon" src={MedIcon} alt="MedIcon"></img>
       <div className="line"></div>
@@ -45,9 +66,18 @@ const SearchBar = ({ onSearch, value }) => {
         onKeyPress={handleKeyPress}
         onClick={handleInputClick}
       />
-      <img className="searchIcon" src={SearchIcon} alt="SearchIcon"></img>
+      <img
+        className="searchIcon"
+        src={SearchIcon}
+        onClick={handleSearchIconClick}
+        alt="SearchIcon"
+      ></img>
       {searchCompletionVisible && (
-        <AutoComplete inputValue={inputValue} onItemSelect={handleItemSelect} />
+        <AutoComplete
+          inputValue={inputValue}
+          onItemSelect={handleItemSelect}
+          onSearch={onSearch}
+        />
       )}
     </div>
   );

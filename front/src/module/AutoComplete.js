@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const AutoComplete = ({ inputValue, onItemSelect }) => {
+const AutoComplete = ({ inputValue, onItemSelect, onSearch }) => {
   const [dropDownList, setDropDownList] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -28,7 +29,7 @@ const AutoComplete = ({ inputValue, onItemSelect }) => {
             }
           )
           .then((response) => {
-            const data = response.data;
+            const data = response.data.result;
             if (Array.isArray(data)) {
               setDropDownList(data);
             } else if (typeof data === "object") {
@@ -89,8 +90,12 @@ const AutoComplete = ({ inputValue, onItemSelect }) => {
     };
   }, [inputValue, page, loading]);
 
+  const navigate = useNavigate();
+
   const handleItemClick = (item) => {
     onItemSelect(item.name);
+    onSearch(item.name);
+    navigate(`/searchList?query=${item.name}`);
   };
 
   return (
