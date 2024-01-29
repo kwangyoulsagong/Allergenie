@@ -38,9 +38,8 @@ const MedList = ({
       console.error("클릭 처리 중 오류:", error.message);
     }
   };
-
-  const medicineList = searchListResults && searchListResults.medicineList;
-  const totalPage = searchListResults && searchListResults.totalPage;
+  const medicineList = searchListResults.result;
+  const totalPage = searchListResults && searchListResults.totalPages;
 
   // 다음 페이지로 이동하는 함수
   const handlePageChange = (page) => {
@@ -95,13 +94,13 @@ const MedList = ({
             <div
               className="AllergeContainerList"
               key={index}
-              onClick={() => handleClick(med.약이름)}
+              onClick={() => handleClick(med.name)}
             >
               <div className="MedTitleList">
-                {highlightedText(med.약이름, value)}
+                {highlightedText(med.name, value)}
               </div>
               <div className="MedIngredientsList">
-                <div className="MedIngredientsInfoList">{med.성분내용}</div>
+                <div className="MedIngredientsInfoList">{med.ingredient}</div>
               </div>
             </div>
           ))}

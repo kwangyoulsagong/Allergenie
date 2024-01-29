@@ -6,39 +6,44 @@ const AutoComplete = ({ inputValue, onItemSelect }) => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const loaderRef = useRef(null);
+  const delayTime = 500; // Set your desired delay time in milliseconds
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     if (inputValue === "") {
       setDropDownList([]);
     } else {
-      setLoading(true);
-      axios
-        .get(
-          `http://localhost:8000/api/v1/home?search=${inputValue}&pageNo=${parseInt(
-            page
-          )}`,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then((response) => {
-          const data = response.data;
-          if (Array.isArray(data)) {
-            setDropDownList(data);
-          } else if (typeof data === "object") {
-            setDropDownList([data]);
-          } else {
-            console.error("Invalid data format:", data);
-          }
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
+      clearTimeout(timeoutRef.current); // Clear previous timeout
+      timeoutRef.current = setTimeout(() => {
+        setLoading(true);
+        axios
+          .get(
+            `http://localhost:8000/api/v1/home?search=${inputValue}&pageNo=${parseInt(
+              page
+            )}`,
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          )
+          .then((response) => {
+            const data = response.data;
+            if (Array.isArray(data)) {
+              setDropDownList(data);
+            } else if (typeof data === "object") {
+              setDropDownList([data]);
+            } else {
+              console.error("Invalid data format:", data);
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+      }, delayTime);
     }
     setPage(1);
   }, [inputValue, page]);
@@ -53,11 +58,12 @@ const AutoComplete = ({ inputValue, onItemSelect }) => {
         setLoading(true);
         axios
           .get(
-            "https://port-0-team-3-3szcb0g2blp12i5o9.sel5.cloudtype.app/api/v1/home",
+            `http://localhost:8000/api/v1/home?search=${inputValue}&pageNo=${parseInt(
+              page
+            )}`,
             {
-              params: {
-                search: inputValue,
-                pageNo: parseInt(page),
+              headers: {
+                "Content-Type": "application/json",
               },
             }
           )
@@ -76,8 +82,10 @@ const AutoComplete = ({ inputValue, onItemSelect }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timeoutRef.current); // Clear timeout on component unmount
     };
   }, [inputValue, page, loading]);
 
