@@ -2,9 +2,9 @@ import axios from "axios";
 
 const handleSearch = async (query, username, idFromQuery, navigate) => {
   try {
-    var medicineId = query;
+    var medicineName = query;
     const response = await axios.get(
-      `http://localhost:8000/api/v1/home/${medicineId}`,
+      `http://localhost:8000/api/v1/home/${medicineName}`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -12,11 +12,6 @@ const handleSearch = async (query, username, idFromQuery, navigate) => {
       }
     );
 
-    // Log the entire response
-    console.log("Full response from the backend:", response);
-
-    // Handle the response as needed
-    console.log("Search results:", response.data);
     return response.data;
   } catch (error) {
     console.error("Error during search:", error);

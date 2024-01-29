@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import handleSearch from "../service/SearchService";
 import handleSearchList from "../service/SearchListService";
+import searchRelatedMedicine from "../service/searchRelatedMedicine";
 
 const MedList = ({
   username,
@@ -26,13 +27,14 @@ const MedList = ({
 
   const navigate = useNavigate();
 
-  const handleClick = async (medName) => {
+  const handleClick = async (medName, medId) => {
     try {
       // handleSearch를 사용하여 상세 정보를 가져옵니다.
       const searchResults = await handleSearch(medName, username);
+      const relatedResults = await searchRelatedMedicine(medId);
       // 검색 결과와 함께 MedInfo 페이지로 이동합니다.
       navigate(`/search?id=${username}&query=${medName}`, {
-        state: { searchResults },
+        state: { searchResults, relatedResults },
       });
     } catch (error) {
       console.error("클릭 처리 중 오류:", error.message);
@@ -94,7 +96,7 @@ const MedList = ({
             <div
               className="AllergeContainerList"
               key={index}
-              onClick={() => handleClick(med.name)}
+              onClick={() => handleClick(med.name, med.medicine_id)}
             >
               <div className="MedTitleList">
                 {highlightedText(med.name, value)}

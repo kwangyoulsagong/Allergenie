@@ -4,25 +4,27 @@ import SearchIcon from "../img/SearchIcon.svg";
 import AutoComplete from "./AutoComplete";
 
 const SearchBar = ({ onSearch, value }) => {
-  const [inputValue, setInputValue] = useState(value || ""); // Initialize with the value from props
+  const [inputValue, setInputValue] = useState(value || "");
   const [searchCompletionVisible, setSearchCompletionVisible] = useState(false);
   const [shouldNotHideCompletion, setShouldNotHideCompletion] = useState(false);
   const searchbarRef = useRef(null);
+  //값전환
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       onSearch(inputValue);
       setSearchCompletionVisible(false);
     }
   };
-
+  // 입력창 클릭시 자동완성 창 뜨기
   const handleInputClick = () => {
     setSearchCompletionVisible(true);
   };
+  //아이콘클릭시 전환
   const handleSearchIconClick = () => {
     onSearch(inputValue);
     setSearchCompletionVisible(false);
   };
-
+  //아이템 선택시
   const handleItemSelect = (selectedItem) => {
     setInputValue(selectedItem);
     setSearchCompletionVisible(false);
@@ -34,7 +36,7 @@ const SearchBar = ({ onSearch, value }) => {
       setSearchCompletionVisible(false);
     };
   }, []);
-
+  //검색창 여백 누를시 닫기
   const handleBodyClick = (e) => {
     if (!searchbarRef.current.contains(e.target) && !shouldNotHideCompletion) {
       setSearchCompletionVisible(false);

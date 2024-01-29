@@ -27,17 +27,17 @@ const MedInfo = ({ username, value }) => {
       </div>
       {searchResults.map((result, index) => (
         <div className="AllergeContainer" key={index}>
-          <div className="MedTitle">{result.약이름}</div>
+          <div className="MedTitle">{result.name}</div>
           <div className="MedIngredients">
-            <span>{result.성분}</span>
-            <div className="MedIngredientsInfo">{result.성분내용}</div>
+            <span>약의 성분</span>
+            <div className="MedIngredientsInfo">{result.ingredient}</div>
           </div>
           <div className="MedEfficacy">
-            <span>{result.약효능효과}</span>
-            <div className="MedEfficacyInfo">{result.효능효과내용}</div>
+            <span>효능 및 효과</span>
+            <div className="MedEfficacyInfo">{result.effect}</div>
           </div>
           <div className="MedImageContainer">
-            <img src={result.약이미지} alt="Med1" />
+            <img src={result.image} alt="Med1" />
           </div>
         </div>
       ))}

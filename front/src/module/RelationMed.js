@@ -3,34 +3,22 @@ import girtec from "../img/girtec.svg";
 import allegra from "../img/allegra.svg";
 import ssizal from "../img/ssizal.svg";
 import perinamin from "../img/perinamin.svg";
+import { useLocation } from "react-router-dom";
 const RelationMed = () => {
+  const location = useLocation();
+  const { relatedResults } = location.state || {};
+
   return (
     <div className="RelationMedContainer">
       <h1 className="RelationMedInfo">관련 약 정보</h1>
-      <div className="RelationMedImgContainer">
-        <img className="RelationImg" src={girtec}></img>
-        <div className="RelationMedTitle">
-          <span>지르텍</span>
+      {relatedResults.related.map((value, index) => (
+        <div key={index} className="RelationMedImgContainer">
+          <img className="RelationImg" src={value.image}></img>
+          <div className="RelationMedTitle">
+            <span>{value.name}</span>
+          </div>
         </div>
-      </div>
-      <div className="RelationMedImgContainer">
-        <img className="RelationImg" src={allegra}></img>
-        <div className="RelationMedTitle">
-          <span>알레그라</span>
-        </div>
-      </div>
-      <div className="RelationMedImgContainer">
-        <img className="RelationImg" src={ssizal}></img>
-        <div className="RelationMedTitle">
-          <span>씨잘</span>
-        </div>
-      </div>
-      <div className="RelationMedImgContainer">
-        <img className="RelationImg" src={perinamin}></img>
-        <div className="RelationMedTitle">
-          <span>페니라민</span>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
