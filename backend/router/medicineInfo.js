@@ -4,4 +4,5 @@ const router = express.Router();
 
 router.get("/:medicineName", medicineInfoController.SearchMedicine);
 router.get("/medicine/:medicineId", medicineInfoController.RelatedMedicine);
+router.get("/sideeffect/:medicineId", medicineInfoController.sideEffect);
 module.exports = router;

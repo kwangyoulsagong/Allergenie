@@ -55,5 +55,32 @@ async function RelatedMedicine(req, res) {
     res.status(500).json({ error: "Internal Server Error" });
   }
 }
+async function sideEffect(req, res) {
+  const medicineId = req.params.medicineId;
+  const sideEffectQuery =
+    "SELECT side_effect_id FROM havesideeffect WHERE medicine_id = ?";
+  connection.query(
+    sideEffectQuery,
+    [medicineId],
+    async (error, effectResult) => {
+      if (error) {
+        console.error("부작용 조회 오류", error);
+      }
+      const sideEffectId = effectResult.map((row) => row.side_effect_id);
+      const effectQuery =
+        "select name from sideEffect where side_effect_id IN (?)";
+      connection.query(
+        effectQuery,
+        [sideEffectId],
+        async (effectError, sideEffectResult) => {
+          if (effectError) {
+            console.error("부작용 찾는중 에러");
+          }
+          res.json({ sideEffect: sideEffectResult });
+        }
+      );
+    }
+  );
+}
 
-module.exports = { SearchMedicine, RelatedMedicine };
+module.exports = { SearchMedicine, RelatedMedicine, sideEffect };

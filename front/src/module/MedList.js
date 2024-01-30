@@ -5,6 +5,7 @@ import axios from "axios";
 import handleSearch from "../service/SearchService";
 import handleSearchList from "../service/SearchListService";
 import searchRelatedMedicine from "../service/searchRelatedMedicine";
+import sideEffectService from "../service/sideEffectService";
 
 const MedList = ({
   username,
@@ -32,9 +33,10 @@ const MedList = ({
       // handleSearch를 사용하여 상세 정보를 가져옵니다.
       const searchResults = await handleSearch(medName, username);
       const relatedResults = await searchRelatedMedicine(medId);
+      const sideEffectResult = await sideEffectService(medId);
       // 검색 결과와 함께 MedInfo 페이지로 이동합니다.
       navigate(`/search?id=${username}&query=${medName}`, {
-        state: { searchResults, relatedResults },
+        state: { searchResults, relatedResults, sideEffectResult },
       });
     } catch (error) {
       console.error("클릭 처리 중 오류:", error.message);
