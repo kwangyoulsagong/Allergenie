@@ -18,9 +18,10 @@ const handleLogin = async (email, password, onLogin, navigate) => {
     const data = response.data;
     if (data.nickname) {
       // 토큰을 로컬 스토리지에 저장
-
       // 사용자 로그인 처리
       onLogin(data.nickname);
+      console.log(data.user_id);
+      localStorage.setItem("userId", data.user_id);
 
       // 페이지 이동
       navigate(`/home?id=${data.nickname}`);

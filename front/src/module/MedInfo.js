@@ -3,17 +3,16 @@ import Med1 from "../img/Med1.svg";
 import PlusCircle from "../img/plus-circle.svg";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import addMedication from "../service/addMedication";
 const MedInfo = ({ username, value }) => {
   const location = useLocation();
   const { searchResults } = location.state || {};
   const navigate = useNavigate();
-  const handleAddMed = async () => {
+  const userId = localStorage.getItem("userId");
+  console.log(userId);
+  const handleAddMed = async (medId) => {
     try {
-      const response = await axios.post("http://localhost:8000/addMedication", {
-        닉네임: username,
-        약정보: value,
-      });
-      console.log(response);
+      addMedication(userId, medId);
     } catch {}
     navigate(`/mypage?nickname=${username}`);
   };
@@ -21,12 +20,15 @@ const MedInfo = ({ username, value }) => {
 
   return (
     <div>
-      <div className="AllergicAdd" onClick={handleAddMed}>
-        <img className="plus-circle" src={PlusCircle} alt="Plus Circle" />
-        <span>알러지 등록</span>
-      </div>
       {searchResults.map((result, index) => (
         <div className="AllergeContainer" key={index}>
+          <div
+            className="AllergicAdd"
+            onClick={() => handleAddMed(result.medicine_id)}
+          >
+            <img className="plus-circle" src={PlusCircle} alt="Plus Circle" />
+            <span>알러지 등록</span>
+          </div>
           <div className="MedTitle">{result.name}</div>
           <div className="MedIngredients">
             <span>약의 성분</span>

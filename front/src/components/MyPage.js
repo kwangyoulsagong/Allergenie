@@ -22,7 +22,7 @@ const MyPage = ({ username, onLogout }) => {
     const fetchEmail = async () => {
       try {
         const response = await axios.get(
-          `https://port-0-team-3-3szcb0g2blp12i5o9.sel5.cloudtype.app/api/v1/mypage`
+          `http://localhost:8000/api/v1/mypage/${nickname}`
         );
 
         if (response.status === 200) {

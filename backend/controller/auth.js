@@ -103,8 +103,8 @@ async function login(req, res) {
           userResults.password
         );
         if (isPasswordValid) {
-          const { email, password, nickname } = userResults;
-          return res.json({ email, password, nickname });
+          const { email, password, nickname, user_id } = userResults;
+          return res.json({ email, password, nickname, user_id });
         } else {
           sendNotificationToClient(res, "비밀번호 일치하지 않습니다.");
         }
