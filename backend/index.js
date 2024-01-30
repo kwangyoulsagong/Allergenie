@@ -4,6 +4,7 @@ const authRoutes = require("./router/auth"); // 라우터 이용
 const autoCompleteRoutes = require("./router/autoComplete");
 const medicineInfoRoutes = require("./router/medicineInfo");
 const prohibitionRoutes = require("./router/prohibition");
+const mypageRoutes = require("./router/mypage");
 const app = express();
 const port = 8000;
 
@@ -14,7 +15,7 @@ app.use("/api/v1/auth/", authRoutes);
 app.use("/api/v1/home/", autoCompleteRoutes);
 app.use("/api/v1/home/", medicineInfoRoutes);
 app.use("/api/v1/mypage/", prohibitionRoutes);
-app.use("/api/v1/mypage/", prohibitionRoutes);
+app.use("/api/v1/mypage/", mypageRoutes);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

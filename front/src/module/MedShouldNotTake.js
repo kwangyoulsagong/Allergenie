@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import deleteCircle from "../img/MyDeleteCircle.svg";
 
-const MedShouldNotTake = ({ username, medicineName }) => {
+const MedShouldNotTake = ({ prohibition }) => {
   return (
     <>
       <div className="deleteMed">
@@ -11,7 +11,15 @@ const MedShouldNotTake = ({ username, medicineName }) => {
       <div className="MedShouldNotTakeContainer">
         <h1>먹으면 안되는 약</h1>
         <div className="Med">
-          <div className="addMedCircle"></div>
+          {Array.isArray(prohibition) && prohibition.length > 0 ? (
+            prohibition.map((value, index) => (
+              <div key={index} className="addMedCircle">
+                {value.name}
+              </div>
+            ))
+          ) : (
+            <p></p>
+          )}
         </div>
       </div>
     </>

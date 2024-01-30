@@ -1,6 +1,6 @@
 const express = require("express");
-const medicineInfoController = require("../controller/medicineInfo"); //controller 이용
+const mypageController = require("../controller/mypage"); //controller 이용
 const router = express.Router();
 
-router.get("/:nickname", medicineInfoController.SearchMedicine);
+router.get("/:nickname", mypageController.Mypage);
 module.exports = router;

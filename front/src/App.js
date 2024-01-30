@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Main from "./components/Main";
 import LoginPage from "./components/LoginPage";
@@ -12,9 +12,19 @@ import "./style/style.scss";
 import "./style/style_1.scss";
 
 const App = () => {
-  const [loginUsername, setLoginUsername] = React.useState("");
+  const [loginUsername, setLoginUsername] = React.useState(
+    localStorage.getItem("username") || ""
+  );
   const [searchResults, setSearchResults] = useState([]);
   const [searchListResults, setSearchListResults] = useState([]);
+
+  useEffect(() => {
+    const storedUsername = localStorage.getItem("username");
+    if (storedUsername) {
+      setLoginUsername(storedUsername);
+    }
+  }, []);
+
   const handleSearchCallback = async (query, userId) => {
     // Similar to your existing search logic
     try {
@@ -36,17 +46,20 @@ const App = () => {
   // 로그인 처리 함수
   const handleLogin = (username) => {
     setLoginUsername(username);
+    localStorage.setItem("username", username);
   };
 
   // 로그아웃 처리 함수
   const handleLogout = () => {
     // 여기에 로그아웃 로직을 구현하세요
     setLoginUsername(""); // 사용자 이름을 빈 문자열로 설정하여 로그아웃을 표현합니다.
+    localStorage.removeItem("username");
   };
   const handleRegister = (username) => {
     // 여기에 실제 회원가입 로직을 추가하세요
     // 예시로 사용자 이름을 설정합니다
     setLoginUsername(username);
+    localStorage.setItem("username", username);
   };
 
   return (
