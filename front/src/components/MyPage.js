@@ -5,7 +5,7 @@ import Nav from "../module/Nav";
 import MyProfile from "../module/MyProfile";
 import MedShouldNotTake from "../module/MedShouldNotTake";
 import MedSideEffect from "../module/MedSideEffect";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Footer from "../module/Footer";
 
 const MyPage = ({ username, onLogout }) => {
@@ -13,48 +13,32 @@ const MyPage = ({ username, onLogout }) => {
   const [prohibition, setProhibition] = useState([]);
 
   const navigate = useNavigate();
+  const location = useLocation();
   const nickname = username;
   const storedUsername = localStorage.getItem("username");
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const storedEmail = localStorage.getItem("userEmail");
-        const storedProhibition = JSON.parse(
-          localStorage.getItem("prohibition")
-        );
+        // Check if location state contains user data
+        if (location.state && location.state.userData) {
+          const userData = location.state.userData;
+          const fetchedUsername = userData.emailResult[0].nickname;
+          const fetchedProhibition = userData.prohibitionResult;
+          const fetchedEmail = userData.emailResult[0].email;
 
-        if (storedUsername && storedEmail && storedProhibition) {
-          setEmail(storedEmail);
-          setProhibition(storedProhibition);
-        } else {
-          const response = await axios.get(
-            `http://localhost:8000/api/v1/mypage/${nickname}`,
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
+          setEmail(fetchedEmail);
+          setProhibition(fetchedProhibition);
+          localStorage.setItem("username", fetchedUsername);
+          localStorage.setItem("userEmail", fetchedEmail);
+          localStorage.setItem(
+            "prohibition",
+            JSON.stringify(fetchedProhibition)
           );
-
-          if (response.status === 200) {
-            const userData = response.data;
-            console.log(userData);
-            const fetchedUsername = username;
-            const fetchedProhibition = userData.prohibitionResult;
-            const fetchedEmail = userData.emailResult[0].email;
-
-            setEmail(fetchedEmail);
-            setProhibition(fetchedProhibition);
-            localStorage.setItem("username", fetchedUsername);
-            localStorage.setItem("userEmail", fetchedEmail);
-            localStorage.setItem(
-              "prohibition",
-              JSON.stringify(fetchedProhibition)
-            );
-          } else {
-            console.error("Error during data retrieval:", response.statusText);
-          }
+        } else {
+          console.log(
+            "User data not available in location state. Display a message or perform another action."
+          );
         }
       } catch (error) {
         console.error("Error during data retrieval:", error.message);
@@ -62,7 +46,7 @@ const MyPage = ({ username, onLogout }) => {
     };
 
     fetchUserData();
-  }, [nickname, username, storedUsername]);
+  }, [location, nickname, username]);
 
   const handleLogout = () => {
     localStorage.removeItem("username");

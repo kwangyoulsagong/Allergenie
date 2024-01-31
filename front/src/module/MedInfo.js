@@ -1,22 +1,19 @@
 import React from "react";
-import Med1 from "../img/Med1.svg";
 import PlusCircle from "../img/plus-circle.svg";
-import { useNavigate, useLocation } from "react-router-dom";
-import axios from "axios";
+import { useLocation } from "react-router-dom";
 import addMedication from "../service/addMedication";
-const MedInfo = ({ username, value }) => {
+const MedInfo = () => {
   const location = useLocation();
   const { searchResults } = location.state || {};
-  const navigate = useNavigate();
   const userId = localStorage.getItem("userId");
   console.log(userId);
   const handleAddMed = async (medId) => {
     try {
       addMedication(userId, medId);
-    } catch {}
-    navigate(`/mypage?nickname=${username}`);
+    } catch (error) {
+      console.log(error);
+    }
   };
-  console.log("검색 페이이이이", searchResults);
 
   return (
     <div>

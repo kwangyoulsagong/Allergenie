@@ -2,7 +2,8 @@ const connection = require("../databases/db");
 
 async function Mypage(req, res) {
   const nickname = req.params.nickname;
-  const userQuery = "SELECT user_id, email FROM User WHERE nickname = ?";
+  const userQuery =
+    "SELECT user_id,nickname, email FROM User WHERE nickname = ?";
   connection.query(userQuery, [nickname], async (error, emailResult) => {
     if (error) {
       console.error("이메일 찾는 내부 오류", error);

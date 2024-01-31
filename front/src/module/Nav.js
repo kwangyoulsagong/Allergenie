@@ -17,7 +17,22 @@ const Nav = ({ username, onLogout }) => {
     }
   }, [username]);
   const handleMypage = async () => {
-    navigate(`/mypage?nickname=${username}`);
+    try {
+      const response = await axios.get(
+        `http://localhost:8000/api/v1/mypage/${username}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.status == 200) {
+        const userData = response.data;
+        navigate(`/mypage?nickname=${username}`, { state: { userData } });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="nav">
