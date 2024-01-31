@@ -15,7 +15,7 @@ async function Mypage(req, res) {
       async (error, userMedResult) => {
         const prohibitionMed = userMedResult.map((row) => row.medicine_id);
         const findProhibitionQuery =
-          "select name from medicine where medicine_id in(?)";
+          "select name, medicine_id from medicine where medicine_id in(?)";
         connection.query(
           findProhibitionQuery,
           [prohibitionMed],
@@ -31,4 +31,13 @@ async function Mypage(req, res) {
     console.error("내부 서버 오류", error);
   }
 }
-module.exports = { Mypage };
+async function selectedMedicine(req, res) {
+  const medicineId = req.params.medicineId;
+  const name = req.params.name;
+  console.log(medicineId, name);
+  const medQuery = "select image, caution, name from medicine where name =?";
+  connection.query(medQuery, [name], async (error, [medResult]) => {
+    res.json(medResult);
+  });
+}
+module.exports = { Mypage, selectedMedicine };

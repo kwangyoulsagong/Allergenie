@@ -7,6 +7,8 @@ import MedShouldNotTake from "../module/MedShouldNotTake";
 import MedSideEffect from "../module/MedSideEffect";
 import { useNavigate, useLocation } from "react-router-dom";
 import Footer from "../module/Footer";
+import { Provider } from "react-redux";
+import store from "../store";
 
 const MyPage = ({ username, onLogout }) => {
   const [email, setEmail] = useState(null);
@@ -64,8 +66,10 @@ const MyPage = ({ username, onLogout }) => {
       <Logo />
       <Nav username={username} onLogout={handleLogout} />
       <MyProfile username={username} email={email} />
-      <MedShouldNotTake username={username} prohibition={prohibition} />
-      <MedSideEffect />
+      <Provider store={store}>
+        <MedShouldNotTake username={username} prohibition={prohibition} />
+        <MedSideEffect />
+      </Provider>
       <Footer footerTop={"1500px"} />
     </div>
   );

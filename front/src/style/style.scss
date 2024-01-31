@@ -1384,7 +1384,7 @@ background: #FFF;
 color: #000;
 text-align: center;
 font-family: 'Pretendard';
-font-size: 16px;
+font-size: 12px;
 font-weight: 600;
 cursor: pointer;
 
@@ -1461,4 +1461,8 @@ cursor: pointer;
     position: absolute;
     left: 7%;
     width: 15px;
+}
+.selectedMedicine{
+    background-color: #AAB3FF;
+    color: #FFFFFF;
 }
