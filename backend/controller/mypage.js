@@ -34,10 +34,26 @@ async function Mypage(req, res) {
 async function selectedMedicine(req, res) {
   const medicineId = req.params.medicineId;
   const name = req.params.name;
-  console.log(medicineId, name);
   const medQuery = "select image, caution, name from medicine where name =?";
   connection.query(medQuery, [name], async (error, [medResult]) => {
-    res.json(medResult);
+    const prohbitionQuery =
+      "select side_effect_id from havesideeffect where medicine_id =?";
+    connection.query(
+      prohbitionQuery,
+      [medicineId],
+      async (error, prohibitionResult) => {
+        const sideEffectid = prohibitionResult.map((row) => row.side_effect_id);
+        const sideEffectQuery =
+          "select name from sideEffect where side_effect_id IN (?)";
+        connection.query(
+          sideEffectQuery,
+          [sideEffectid],
+          async (error, sideEffectResult) => {
+            res.json({ medResult, sideEffectResult });
+          }
+        );
+      }
+    );
   });
 }
 module.exports = { Mypage, selectedMedicine };
