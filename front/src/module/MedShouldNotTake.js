@@ -3,9 +3,13 @@ import axios from "axios";
 import deleteCircle from "../img/MyDeleteCircle.svg";
 import { useDispatch } from "react-redux";
 import { setProhibitionInfo } from "../slices/prohbitionInfoSlice";
+import addCircle from "../img/MyPlusCircle.svg";
+import { useNavigate } from "react-router-dom";
 
-const MedShouldNotTake = ({ username, prohibition }) => {
+const MedShouldNotTake = ({ username, prohibition, userData }) => {
   const [selectMedicine, setSelectMedicine] = useState(null);
+  const navigate = useNavigate();
+  const userId = localStorage.getItem("userId");
   const dispatch = useDispatch();
   const handleMedicne = async (index, medId, name) => {
     setSelectMedicine(index);
@@ -19,12 +23,48 @@ const MedShouldNotTake = ({ username, prohibition }) => {
       console.log(error);
     }
   };
+  const goSearch = () => {
+    navigate(`/searchList?id=${username}&query=`);
+  };
+  const deleteMed = async () => {
+    try {
+      if (selectMedicine !== null) {
+        const medIdToDelete = prohibition[selectMedicine].medicine_id;
+        const data = {
+          medicineId: medIdToDelete,
+          user_id: userId,
+        };
+
+        const response = await axios.post(
+          "http://localhost:8000/api/v1/mypage/delete",
+          data,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        if (response) {
+          console.log("hello");
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
-      <div className="deleteMed">
-        <img src={deleteCircle} alt="Delete Circle" />약 정보 삭제하기
-      </div>
       <div className="MedShouldNotTakeContainer">
+        <div className="addMedSearch" onClick={goSearch}>
+          <img src={addCircle} alt="Add Circle" />
+          <div style={{ textDecoration: "none", color: "inherit" }}>
+            약 정보 추가하기
+          </div>
+        </div>
+        <div className="deleteMed" onClick={deleteMed}>
+          <img src={deleteCircle} alt="Delete Circle" />약 정보 삭제하기
+        </div>
         <h1>먹으면 안되는 약</h1>
         <div className="Med">
           {Array.isArray(prohibition) && prohibition.length > 0 ? (

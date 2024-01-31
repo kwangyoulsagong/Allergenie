@@ -26,6 +26,19 @@ async function addMedication(req, res) {
 }
 async function deleteMedication(req, res) {
   try {
+    const { medicineId, user_id } = req.body;
+    console.log(medicineId, user_id);
+    const deleteQuery = `DELETE FROM prohibition WHERE medicine_Id = ? AND user_id = ?`;
+    connection.query(
+      deleteQuery,
+      [medicineId, user_id],
+      async (error, deleteResult) => {
+        if (error) {
+          console.error("삭제중 내부 오류", error);
+        }
+        res.json({ deleteResult });
+      }
+    );
   } catch (error) {
     console.error("내부 서버 오류", error);
   }

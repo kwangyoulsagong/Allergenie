@@ -18,13 +18,13 @@ const MyPage = ({ username, onLogout }) => {
   const location = useLocation();
   const nickname = username;
   const storedUsername = localStorage.getItem("username");
+  const userData = location.state.userData;
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
         // Check if location state contains user data
         if (location.state && location.state.userData) {
-          const userData = location.state.userData;
           const fetchedUsername = userData.emailResult[0].nickname;
           const fetchedProhibition = userData.prohibitionResult;
           const fetchedEmail = userData.emailResult[0].email;
@@ -67,7 +67,11 @@ const MyPage = ({ username, onLogout }) => {
       <Nav username={username} onLogout={handleLogout} />
       <MyProfile username={username} email={email} />
       <Provider store={store}>
-        <MedShouldNotTake username={username} prohibition={prohibition} />
+        <MedShouldNotTake
+          username={username}
+          prohibition={prohibition}
+          userData={userData}
+        />
         <MedSideEffect />
       </Provider>
       <Footer footerTop={"1500px"} />
