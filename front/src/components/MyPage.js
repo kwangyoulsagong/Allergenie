@@ -71,6 +71,7 @@ const MyPage = ({ username, onLogout }) => {
           username={username}
           prohibition={prohibition}
           userData={userData}
+          setProhibition={setProhibition}
         />
         <MedSideEffect />
       </Provider>

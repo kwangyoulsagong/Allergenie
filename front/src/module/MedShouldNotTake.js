@@ -6,7 +6,7 @@ import { setProhibitionInfo } from "../slices/prohbitionInfoSlice";
 import addCircle from "../img/MyPlusCircle.svg";
 import { useNavigate } from "react-router-dom";
 
-const MedShouldNotTake = ({ username, prohibition, userData }) => {
+const MedShouldNotTake = ({ username, prohibition, setProhibition }) => {
   const [selectMedicine, setSelectMedicine] = useState(null);
   const navigate = useNavigate();
   const userId = localStorage.getItem("userId");
@@ -46,7 +46,12 @@ const MedShouldNotTake = ({ username, prohibition, userData }) => {
         );
 
         if (response) {
-          console.log("hello");
+          const updatedProhibition = [...prohibition];
+          updatedProhibition.splice(selectMedicine, 1);
+          setProhibition(updatedProhibition);
+
+          // Reset the selected medicine index
+          setSelectMedicine(null);
         }
       }
     } catch (error) {
