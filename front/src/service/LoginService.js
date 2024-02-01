@@ -7,7 +7,7 @@ const handleLogin = async (email, password, onLogin, navigate) => {
       password: password,
     };
     const response = await axios.post(
-      "http://localhost:8000/api/v1/auth/login",
+      "https://port-0-allergenie-199u12dls2shgxu.sel5.cloudtype.app/api/v1/auth/login",
       request,
       {
         headers: { "Content-Type": "application/json" },

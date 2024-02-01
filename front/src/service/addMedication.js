@@ -9,7 +9,7 @@ const addMedication = async (userId, medId) => {
   };
   try {
     const response = await axios.post(
-      "http://localhost:8000/api/v1/mypage/add",
+      "https://port-0-allergenie-199u12dls2shgxu.sel5.cloudtype.app/api/v1/mypage/add",
       data,
       {
         headers: {

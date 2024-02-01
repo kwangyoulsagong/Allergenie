@@ -2,10 +2,10 @@ import axios from "axios";
 const searchRelatedMedicine = async (medicineId) => {
   try {
     const response = await axios.get(
-      `http://localhost:8000/api/v1/home/medicine/${medicineId}`,
+      `https://port-0-allergenie-199u12dls2shgxu.sel5.cloudtype.app/api/v1/home/medicine/${medicineId}`,
       {
         headers: {
-          "Content-Type": "applicaiton/json",
+          "Content-Type": "application/json",
         },
       }
     );

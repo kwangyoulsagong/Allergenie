@@ -1,6 +1,7 @@
 module.exports = {
-  host: "127.0.0.1",
-  user: "Allergenie",
+  host: "svc.sel5.cloudtype.app",
+  user: "root",
   password: "allergenie",
   database: "Allergeniedb",
+  port: 32389,
 };

@@ -15,7 +15,12 @@ const MedShouldNotTake = ({ username, prohibition, setProhibition }) => {
     setSelectMedicine(index);
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/v1/mypage/medicine/info/${medId}/${name}`
+        `https://port-0-allergenie-199u12dls2shgxu.sel5.cloudtype.app/api/v1/mypage/medicine/info/${medId}/${name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
       console.log(response.data);
       dispatch(setProhibitionInfo(response.data));
@@ -36,7 +41,7 @@ const MedShouldNotTake = ({ username, prohibition, setProhibition }) => {
         };
 
         const response = await axios.post(
-          "http://localhost:8000/api/v1/mypage/delete",
+          "https://port-0-allergenie-199u12dls2shgxu.sel5.cloudtype.app/api/v1/mypage/delete",
           data,
           {
             headers: {
