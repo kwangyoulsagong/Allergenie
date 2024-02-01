@@ -28,7 +28,7 @@ async function deleteMedication(req, res) {
   try {
     const { medicineId, user_id } = req.body;
     console.log(medicineId, user_id);
-    const deleteQuery = `DELETE FROM prohibition WHERE medicine_Id = ? AND user_id = ?`;
+    const deleteQuery = `DELETE FROM Prohibition WHERE medicine_Id = ? AND user_id = ?`;
     connection.query(
       deleteQuery,
       [medicineId, user_id],

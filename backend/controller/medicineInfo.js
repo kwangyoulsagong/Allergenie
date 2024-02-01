@@ -58,7 +58,7 @@ async function RelatedMedicine(req, res) {
 async function sideEffect(req, res) {
   const medicineId = req.params.medicineId;
   const sideEffectQuery =
-    "SELECT side_effect_id FROM havesideeffect WHERE medicine_id = ?";
+    "SELECT side_effect_id FROM HaveSideEffect WHERE medicine_id = ?";
   connection.query(
     sideEffectQuery,
     [medicineId],
