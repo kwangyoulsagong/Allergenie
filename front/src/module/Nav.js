@@ -36,10 +36,11 @@ const Nav = ({ username, onLogout }) => {
   };
   return (
     <div className="nav">
-      <div className="top-info"></div>
-      <div className="Profile_picture"></div>
-      <div className="Profile_Avatar"></div>
-      <div className="Ellipse"></div>
+      <div className="Ellipse">
+        <div className="Profile_picture">
+          <div className="Profile_Avatar"></div>
+        </div>
+      </div>
       <div
         className="greetings"
         dangerouslySetInnerHTML={{
@@ -50,14 +51,14 @@ const Nav = ({ username, onLogout }) => {
             : "",
         }}
       ></div>
+      <div className="line-16"></div>
       <div className="my-page" onClick={handleMypage}>
         마이페이지
       </div>
+      <div className="line-17"></div>
       <div className="logout" onClick={onLogout}>
         로그아웃
       </div>
-      <div className="line-16"></div>
-      <div className="line-17"></div>
     </div>
   );
 };

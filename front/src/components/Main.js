@@ -54,7 +54,7 @@ const Main = ({
       <Background />
       <MedGuideBox />
       <MedKnowledgeBox />
-      <Footer footerTop={"1900px"} />
+      <Footer footerTop={"280vh"} />
     </div>
   );
 };
