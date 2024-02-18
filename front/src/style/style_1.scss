@@ -2,12 +2,30 @@
    position: absolute;
    top: 10%;
    left: calc(50% + 150px);
+   @media only screen and (max-width: 1200px) {
+      width: 250px;
+  }
+  @media only screen and (max-width: 800px) {
+   width: 200px;
+}
+@media only screen and (max-width: 440px) {
+   width: 100px;
+   left: 70%;
+}
+   
 }
 
 .LoginPage-goorm2{ /* login 작은 구름 */
    position: absolute;
    top: calc(10% + 550px);
    right: calc(50% + 250px);
+   @media only screen and (max-width: 1200px) {
+      width: 150px;
+  }
+  @media only screen and (max-width: 440px) {
+   width: 75px;
+   left: 3vw;
+}
 }
 
 .LoginPage-nav { /* login 내비게이션 */
@@ -48,6 +66,9 @@
    @media only screen and (max-width: 800px) {
       width: 500px;
   }
+  @media only screen and (max-width: 440px) {
+   width: 300px;
+}
 
 }
 
@@ -59,6 +80,9 @@
    @media only screen and (max-width: 800px) {
       font-size: 20px;
   }
+  @media only screen and (max-width: 440px) {
+   font-size: 16px;
+}
 }
 
 .loginBox-contents{ /* 아이디, 비밀번호 */
@@ -69,6 +93,9 @@
    @media only screen and (max-width: 800px) {
       font-size: 14px;
   }
+  @media only screen and (max-width: 440px) {
+   font-size: 12px;
+}
 }
 
 .login-tf{ /* login id input */
@@ -79,6 +106,9 @@
    border-radius: 16px;
    border: 1px solid #AAB3FF;
    box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
+   @media only screen and (max-width: 440px) {
+      width: 250px
+   }
 }
 .login-tf img{ 
    width: 19px;
@@ -94,6 +124,10 @@
    font-family: 'Pretendard';
    font-size: 16px;
    font-weight: 500;
+   @media only screen and (max-width: 440px) {
+      width:190px ;
+   }
+  
 }
 
 .check{
