@@ -83,7 +83,7 @@ const LoginPage = ({ onLogin }) => {
           </span>
         </article>
       </main>
-      <Footer />
+      <Footer footerTop={"904px"} />
     </div>
   );
 };
