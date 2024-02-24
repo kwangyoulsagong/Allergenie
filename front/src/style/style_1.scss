@@ -345,9 +345,6 @@ font-weight: 600;
 }
 
 .MyPage-main{
-   position: absolute;
-   left: calc(50% - 400px);
-   top: calc(42vh + 290px);
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -356,13 +353,20 @@ font-weight: 600;
 
 /* 부작용 */
 .Mypage-se{
-   display: relative;
+   margin-top: 80vh;
    width: 800px;
    min-height: 245px;
    border-radius: 16px;
    border: 1px solid #AAB3FF;
    background: #FFF;
    box-shadow: 0px 0px 25px 7px rgba(170, 179, 255, 0.30);
+   @media only screen and (max-width: 800px) {
+      width: 100%;
+      margin-left: 6%
+     }
+     @media only screen and (max-width: 440px) {
+      margin-left: 1%;
+     }
 }
 
 .Mypage-se-title{
@@ -401,6 +405,7 @@ font-weight: 600;
    font-size: 8px;
    line-height: 10px;
    color: #FFFFFF;
+
 }
 .Mypage-se-img{
    position: absolute;
@@ -408,7 +413,10 @@ font-weight: 600;
    gap: 27px;
    margin-left: 8px;
    margin-bottom: 12px;
-   width: 100%;
+   @media only screen and (max-width: 440px) {
+      gap:3.25vw;
+   }
+   
 }
 .Mypage-se-content-title{
    display: flex;
@@ -436,10 +444,17 @@ font-weight: 600;
    border: 1px solid #AAB3FF;
    background: #FFF;
    box-shadow: 0px 0px 25px 7px rgba(170, 179, 255, 0.30);
+   @media only screen and (max-width: 800px) {
+      width: 100%;
+      margin-left: 6%
+     }
+     @media only screen and (max-width: 440px) {
+      margin-left: 1%;
+     }
  }
  
  .Mypage-caution-container { 
-   width: 956px;
+   width: 100%;
  }
  
  .Mypage-caution-img { /*약 성분 사진*/
@@ -454,6 +469,11 @@ font-weight: 600;
    background: #F6F6F6;
    box-shadow: 6px 6px 14px 0px rgba(0, 0, 0, 0.25) inset;
    cursor: pointer;
+   @media only screen and (max-width: 440px) {
+     width: 100px;
+     height: 100px;
+     margin-left: 25px;
+     }
 }.Mypage-caution-img img{
    width: inherit;
    height: inherit;
@@ -461,7 +481,6 @@ font-weight: 600;
 }
  
  .Mypage-caution-content { /*약 이름 + 주의사항 컨테이너*/
-   width: 760px;
    margin-left: 210px;
 
  }
@@ -492,6 +511,10 @@ font-weight: 600;
    font-style: normal;
    font-weight: 500;
    line-height: 25px;
+   @media only screen and (max-width: 440px) {
+      margin-left: -50px;
+      width: 60vw;
+     }
 }
 
 .Modal {
