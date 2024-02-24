@@ -8,11 +8,11 @@ const MedGuideBox = () => {
       <div className="medGuideBox1">
         <img
           src={cup}
-          style={{ position: "absolute", left: "22.5vw", top: "6.5vh" }}
+          style={{ position: "absolute", right: "300px", top: "6.5vh" }}
         ></img>
         <img
           src={medIcon}
-          style={{ position: "absolute", left: "25vw", top: "6.5vh" }}
+          style={{ position: "absolute", right: "260px", top: "6.5vh" }}
         ></img>
         <h1>약은 물과 함께,</h1>
         <span>
