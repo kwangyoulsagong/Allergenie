@@ -16,10 +16,13 @@ const MedList = ({
 }) => {
   const handleAddMed = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/addMedication", {
-        닉네임: username,
-        약정보: value,
-      });
+      const response = await axios.post(
+        "https://port-0-allergenie-199u12dls2shgxu.sel5.cloudtype.app/addMedication",
+        {
+          닉네임: username,
+          약정보: value,
+        }
+      );
       console.log(response);
     } catch (error) {
       console.error("약물 추가 중 오류:", error.message);

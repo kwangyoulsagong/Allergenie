@@ -3,7 +3,7 @@ const checkEmailService = async (email) => {
   console.log(email);
   try {
     const response = await axios.get(
-      `http://localhost:8000/api/v1/auth/checkEmail/${email}`,
+      `https://port-0-allergenie-199u12dls2shgxu.sel5.cloudtype.app/api/v1/auth/checkEmail/${email}`,
       {
         headers: {
           "Content-Type": "application/json",

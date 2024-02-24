@@ -4,7 +4,7 @@ const handleSearchList = async (query, pageNo) => {
   const search = query;
   try {
     const response = await axios.get(
-      `http://localhost:8000/api/v1/home?search=${search}&pageNo=${pageNo}`,
+      `https://port-0-allergenie-199u12dls2shgxu.sel5.cloudtype.app/api/v1/home?search=${search}&pageNo=${pageNo}`,
       {
         headers: {
           "Content-Type": "application/json",

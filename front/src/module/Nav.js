@@ -19,7 +19,7 @@ const Nav = ({ username, onLogout }) => {
   const handleMypage = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/v1/mypage/${username}`,
+        `https://port-0-allergenie-199u12dls2shgxu.sel5.cloudtype.app/api/v1/mypage/${username}`,
         {
           headers: {
             "Content-Type": "application/json",

@@ -19,7 +19,7 @@ const AutoComplete = ({ inputValue, onItemSelect, onSearch }) => {
         setLoading(true);
         axios
           .get(
-            `http://localhost:8000/api/v1/home?search=${inputValue}&pageNo=${parseInt(
+            `https://port-0-allergenie-199u12dls2shgxu.sel5.cloudtype.app/api/v1/home?search=${inputValue}&pageNo=${parseInt(
               page
             )}`,
             {
@@ -59,7 +59,7 @@ const AutoComplete = ({ inputValue, onItemSelect, onSearch }) => {
         setLoading(true);
         axios
           .get(
-            `http://localhost:8000/api/v1/home?search=${inputValue}&pageNo=${parseInt(
+            `https://port-0-allergenie-199u12dls2shgxu.sel5.cloudtype.app/api/v1/home?search=${inputValue}&pageNo=${parseInt(
               page
             )}`,
             {
