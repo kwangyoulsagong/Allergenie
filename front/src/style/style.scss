@@ -425,7 +425,7 @@ color: #000958;
 
 position: absolute;
 width: 680px;
-height: 200px;
+height: 27.5vh;
 left: calc(50% - 680px/2 + 10px);
 margin-top: 12.5vh;
 
@@ -433,6 +433,11 @@ background: url("../img/mainp1.svg");
 background-size: cover;
 background-repeat: no-repeat;
 border-radius: 16px;
+@media only screen and (max-width: 1200px) {
+
+    
+  }
+
 @media only screen and (max-width: 440px) {
    width: 80vw;
    left: 10%;
@@ -468,9 +473,23 @@ color: #FFFFFF;
 
 
 }
-.medGuideBox1 img{
+.guidimg1{
+    position: absolute;
+    top: 50px;
+    left: 50%;
     @media only screen and (max-width: 440px) {
-        display: none;
+        top: 45px;
+        left: 37.5%;
+        
+      }
+}
+.guidimg2{
+    position: absolute;
+    top: 50px;
+    left: 56%;
+    @media only screen and (max-width: 440px) {
+        top: 45px;
+        left: 47.5%;
         
       }
 }
@@ -530,7 +549,7 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 
 position: absolute;
 width: 680px;
-height: 200px;
+height: 27.5vh;
 left: calc(50% - 250px/2 - 205px);
 margin-top: 42.5vh;
 
@@ -538,12 +557,50 @@ background: url("../img/mainp2.svg");
 background-size: cover;
 background-repeat: no-repeat;
 border-radius: 16px;
+
 @media only screen and (max-width: 440px) {
     width: 80vw;
     left: 10%;
     
   }
 
+}
+.guidimg3{
+    position: absolute;
+    top: 45px;
+    left: 42.5%;
+    @media only screen and (max-width: 440px) {
+        top: 39px;
+        left: 50%;
+        
+      }
+}
+.medGuideBox2 h1{
+    margin-top: 55px;
+    margin-left:5% ;
+    color: #FFFFFF;
+    @media only screen and (max-width: 440px) {
+        font-size: 20px;
+        
+      }
+}
+.medGuideBox2 span{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 5%;
+    color: #FFFFFF;
+    width: 500px;
+    font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 13px;
+line-height: 19px;
+display: flex;
+align-items: center;
+text-align: left;
+@media only screen and (max-width: 440px) {
+    width: 75vw;
+  }
 }
 
 .goormGuideFooter{
@@ -580,7 +637,7 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
      @media only screen and (max-width: 1200px) {
         margin-top:62.5vw;
      }
-     @media only screen and (max-width: 1200px) {
+     @media only screen and (max-width: 440px) {
         margin-top:62.5vw;
         margin-left: 4vw;
      }
@@ -605,7 +662,7 @@ align-items: center;
 
 /* snb color 2 */
 color: #000958;
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 440px) {
     left: 0;
  }
 
@@ -615,10 +672,15 @@ color: #000958;
     /* Group 442 */
 width: 330px;
 height: 200px;
+display: flex;
+flex-direction: column;
+align-items: center;
 margin-top: 117.5vh;
+justify-content: center;
 background: url("../img/mainp3.svg");
 background-size: cover;
 background-repeat: no-repeat;
+color: #FFF;
 border-radius: 16px;
 @media only screen and (max-width: 1200px) {
 
@@ -626,11 +688,59 @@ border-radius: 16px;
  @media only screen and (max-width: 800px) {
 
  }
- @media only screen and (max-width: 1200px) {
-    height: 100px;
+ @media only screen and (max-width: 440px) {
+    height: 125px;
  }
 
 
+}
+.KnowledgeBox1 h1{
+    font-size: 18px;
+    @media only screen and (max-width: 440px) {
+        font-size: 13px;
+     }
+    
+}
+.KnowledgeBox1 div{
+    font-size: 40px;
+    font-weight: bold;
+    @media only screen and (max-width: 440px) {
+        font-size: 30px;
+     }
+}
+.KnowledgeBox1 span{
+    font-size: 14px;
+    text-align: center;
+    width: 200px;
+    @media only screen and (max-width: 440px) {
+        font-size: 10px;
+    }
+}
+.KnowledgeBox2 h1{
+    font-size: 18px;
+    width: 200px;
+    text-align: center;
+    @media only screen and (max-width: 440px) {
+        font-size: 13px;
+        width: 150px;
+        text-align: center;
+     }
+    
+}
+.KnowledgeBox2 div{
+    font-size: 40px;
+    font-weight: bold;
+    @media only screen and (max-width: 440px) {
+        font-size: 30px;
+     }
+}
+.KnowledgeBox2 span{
+    font-size: 14px;
+    text-align: center;
+    width: 200px;
+    @media only screen and (max-width: 440px) {
+        font-size: 10px;
+    }
 }
 .KnowledgeBox2{
     /* Group 445 */
@@ -638,6 +748,11 @@ border-radius: 16px;
 width: 330px;
 height: 200px;
 margin-top: 117.5vh;
+display: flex;
+color: #FFF;
+justify-content: center;
+flex-direction: column;
+align-items: center;
 background: url("../img/mainp4.svg");
 background-size: cover;
 background-repeat: no-repeat;
@@ -647,8 +762,8 @@ border-radius: 16px;
  @media only screen and (max-width: 800px) {
 
  }
- @media only screen and (max-width: 1200px) {
-    height: 100px;
+ @media only screen and (max-width: 440px) {
+    height: 125px;
  }
 
 
@@ -667,7 +782,7 @@ background: url("../img/KnowledgeGoorm.svg");
 filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
 background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
 transform-origin: center center; /* 회전 중심을 가운데로 조정 */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 440px) {
     margin-top: 128vh;
     left: 0;
     width: 90px;
@@ -677,19 +792,31 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 .Footer{
 
 position: absolute;
-width: 100vw;
+width: 100%;
 height: 80px;
 
 /* sub color 1 */
 background: #DBE3FF;
 box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+@media only screen and (max-width: 1100px) {
+    position: absolute;
+  bottom: -150vh;
+ }
+@media only screen and (max-width: 800px) {
+    position: absolute;
+  bottom: -120vh;
+ }
+@media only screen and (max-width: 440px) {
+    position: absolute;
+  bottom: -100vh;
+ }
 
 }
 .Footer_Text{
     /* 이용약관 | 개인정보처리방침 | 책임의 한계와 법적고지 | 회원정보 고객센터AllerGenie Copyright @ ALLERGENIE Corp. All Rights Reserved */
 
 position: absolute;
-width: 100vw;
+width: 100%;
 height: 54px;
 display: flex;
 justify-content: center;
@@ -730,6 +857,32 @@ filter: drop-shadow(4px 4px 20px rgba(0, 9, 88, 0.2));
 background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
 transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 background-repeat: no-repeat;
+@media only screen and (max-width: 1400px) {
+    margin-left: 0.75vw;
+    margin-top: 2vh;
+ }
+ @media only screen and (max-width: 1200px) {
+    margin-left: 0.75vw;
+    margin-top: 3vh;
+ }
+@media only screen and (max-width: 1100px) {
+    margin-left: 1vw;
+    margin-top: 1.75vh;
+ }
+@media only screen and (max-width: 1000px) {
+    margin-left: 1.25vw;
+    margin-top: 2vh;
+ }
+@media only screen and (max-width: 800px) {
+    margin-left: 1vw;
+    margin-top: 2.5vh;
+ }
+
+@media only screen and (max-width: 440px) {
+    margin-left: 2.1vw;
+    margin-top: 2.5vh;
+ }
+
 
 }
 .Ellipse{
@@ -763,6 +916,9 @@ border: 2px solid #000958;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    @media only screen and (max-width: 440px) {
+        font-size: 8px;
+    }
   }
   
   .word2 {
@@ -771,6 +927,9 @@ border: 2px solid #000958;
     font-weight: 600;
     font-size: 12px;
     line-height: 10px;
+    @media only screen and (max-width: 440px) {
+        font-size: 8px;
+    }
   }
 
 .my-page{
@@ -788,6 +947,9 @@ border: 2px solid #000958;
     text-align: center;
 
     color: #000000;
+    @media only screen and (max-width: 440px) {
+        font-size: 8px;
+    }
 }
 .nav{
     position: absolute;
@@ -816,6 +978,10 @@ border: 2px solid #000958;
     text-align: center;
 
     color: #000000;
+    @media only screen and (max-width: 440px) {
+        width: 30px;
+        font-size: 8px;
+    }
 }
 
 .line-16{
@@ -851,6 +1017,9 @@ top: -40px;
 /* snb color 2 */
 background: #000958;
 border-radius: 30px;
+@media only screen and (max-width: 440px) {
+    left :0;
+}
 
 }
 .AllergicAdd span{
@@ -896,7 +1065,13 @@ align-items: center;
 
 /* main color */
 color: #000;
-
+ @media only screen and (max-width: 800px) {
+    left: 0;
+    
+}
+@media only screen and (max-width: 440px) {
+    width: 300px;
+}
 
 }
 .plus-circle{
@@ -923,6 +1098,10 @@ background: #FFFFFF;
 border: 1px solid #AAB3FF;
 box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
 border-radius: 16px;
+@media only screen and (max-width: 440px) {
+    width: 300px;
+    margin-left: 15%;
+}
 }
 .highlighted-mark {
     color: #AAB3FF; /* or any other color you want */
@@ -954,12 +1133,23 @@ color: #000;
 position: absolute;
 width: 178px;
 height: 19px;
-left: 48vw;
-top: 1225px;
+left: 52.5%;
+transform: translate(-50%, -50%);
+top: 1300px;
 display: flex;
 gap: 10px;
 
 color: #000000;
+@media only screen and (max-width: 1100px ) {
+    top: 1400px;
+
+}
+@media only screen and (max-width: 800px) {
+
+}
+@media only screen and (max-width: 440px) {
+    left: 57.5%;
+}
 
 }
 .MedIngredientsInfoList{
@@ -979,6 +1169,9 @@ align-items: center;
 
 /* main color */
 color: #000;
+@media only screen and (max-width: 440px) {
+    width: 274px;
+}
 
 
 }
@@ -998,7 +1191,10 @@ background: #FFFFFF;
 border: 1px solid #AAB3FF;
 box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
 border-radius: 16px;
-
+@media only screen and (max-width: 440px) {
+    width: 100%;  
+    left: 0;
+}
 }
 .MedTitle{
     /* 항 히스타민제 */
@@ -1077,6 +1273,10 @@ display: flex;
 align-items: center;
 
 color: #000000;
+@media only screen and (max-width: 440px) {
+   width: 260px;
+   line-height: 12.5px;
+}
 
 
 }
@@ -1136,7 +1336,10 @@ display: flex;
 align-items: center;
 
 color: #000000;
-
+@media only screen and (max-width: 440px) {
+    width: 260px;
+    line-height: 12.5px;
+ }
 
 }
 .MedImageContainer{
@@ -1156,6 +1359,12 @@ background: #FFFFFF;
 border: 1px solid #DFDFDF;
 box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.2);
 border-radius: 16px;
+@media only screen and (max-width: 440px) {
+    top: 25%;
+    width: 100px;
+    height: 100px;
+    left: 3%;
+ }
 
 }
 .MedImageContainer img{
@@ -1180,7 +1389,10 @@ background: #FFFFFF;
 border: 1px solid #AAB3FF;
 box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
 border-radius: 16px;
-
+@media only screen and (max-width: 440px) {
+    width: 100%;  
+    left: 0;
+}
 }
 .RelationMedInfo{
     /* 관련 약 정보 */
@@ -1201,6 +1413,10 @@ align-items: center;
 
 /* snb color 2 */
 color: #000958;
+@media only screen and (max-width: 440px) {
+
+    left: 3%;
+}
 
 
 }
@@ -1219,13 +1435,18 @@ background: #FFFFFF;
 border: 1px solid #DFDFDF;
 box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.2);
 border-radius: 16px;
+@media only screen and (max-width: 440px) {
+    width: 75px;
+    height: 75px;
+    left: 0;
+}
  
 }
 .RelationImg{
     margin-left: 2.5px;
     margin-top: 10px;
-    width: 100px;
-    height: 80px;
+    width: 94%;
+    height: 55px;
 }
 .RelationMedTitle{
     /* Rectangle 82 */
@@ -1237,6 +1458,9 @@ margin-top: 20px;
 /* main color */
 background: #AAB3FF;
 border-radius: 30px;
+@media only screen and (max-width: 440px) {
+    margin-left: 12.5px;
+}
 }
 .RelationMedTitle span{
     /* 지르텍 */
@@ -1275,6 +1499,10 @@ background: #FFFFFF;
 border: 1px solid #AAB3FF;
 box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
 border-radius: 16px;
+@media only screen and (max-width: 440px) {
+    width: 100%;  
+    left: 0;
+}
 
 }
 .sideEffectText{
@@ -1296,6 +1524,9 @@ align-items: center;
 
 /* snb color 2 */
 color: #000958;
+@media only screen and (max-width: 440px) {
+    left: 2%;
+}
 
 
 }
@@ -1303,20 +1534,30 @@ color: #000958;
     position: absolute;
     margin-top: 9vh;
     margin-left: 7.5%;
-    width: 100%;
     display: flex;
     gap: 35px;
 }
 .sideEffectImgContainer img{
     width: 30px;
+    @media only screen and (max-width: 440px) {
+        width: 6.75vw;
+        gap: 3vw;
+
+    }
+
+    
 }
 .sideEffectTypeContainer{
     position: absolute;
-    width: 100%;
     display: flex;
     top: 110px;
     gap: 16px;
     margin-left: 28px;
+    @media only screen and (max-width: 440px) {
+        top: 120px;
+        gap: 4.5vw;
+
+    }
 
 }
 .sideEffectType{
@@ -1333,6 +1574,9 @@ color: #000958;
     font-size: 8px;
     line-height: 10px;
     color: #FFFFFF;
+    @media only screen and (max-width: 440px) {
+        width: 10.5vw;
+    }
 }
 .sideEffectInfo{
     /* 약물의 종류에 따라 정도가 다르지만 대표적인 부작용은 졸음, 진정작용과 같은 중추신경계 부작용이다. */
@@ -1350,6 +1594,8 @@ color: #000958;
     display: flex;
     align-items: center;
     color: #000000;
+    @media only screen and (max-width: 440px) {
+    }
 }
 .sideEffectWarning{
     /* 주의사항 & 해결방안 */
@@ -1367,6 +1613,9 @@ color: #000958;
     align-items: center;
     /* snb color 2 */
     color: #000958;
+    @media only screen and (max-width: 440px) { 
+        left: 2%;
+    }
 }
 .sideEffectWarningInfo{
     /* 자동차 운전이나 위험을 수반하는 기계조작, 집중을 요하는 작업에 종사하는 사람들은 복용하지 않도록 한다. 항콜린 작용에 의한 배뇨 및 시력장애가 나타날 수 있으므로 전립선비대증 환자나 녹내장 환자에게는 투여하지 않도록 한다. 중추신경억제제 또는 항콜린성 약물과 병용투여 시 용량 조절이 요구될 수 있다. 졸음, 진정작용과 같은 중추신경계 부작용이 증가될 수 있으므로 항히스타민제 복용 시 알코올을 섭취하지 않도록 한다. */
@@ -1386,6 +1635,10 @@ color: #000958;
     align-items: center;
 
     color: #000000;
+    @media only screen and (max-width: 440px) { 
+        width: 95%;
+        left: 2%;
+    }
 }
 //마이페이지
 .MyIcon{
