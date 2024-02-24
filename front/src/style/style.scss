@@ -19,6 +19,19 @@
     margin-top: 60vw;
     width:100%;
     height: 100vh*0.5;
+    @media only screen and (max-width: 1400px) {
+        margin-top: 60vw;
+     }
+     @media only screen and (max-width: 1200px) {
+        margin-top: 90vw;
+     }
+     @media only screen and (max-width: 800px) {
+        margin-top: 90vw;
+     }
+     @media only screen and (max-width: 440px) {
+        margin-top: 60vh;
+     }
+    
 
 }
 /* 구름 배경에 대한 스타일 */
@@ -463,7 +476,7 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 }
 .MedKnowledgeContainer{
     position: absolute;
-    margin-top:42.5vw;
+    margin-top:100vh;
     width:100%;
     height: 100vh*0.5;
 }
