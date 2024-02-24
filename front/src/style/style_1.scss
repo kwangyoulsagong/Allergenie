@@ -2,12 +2,30 @@
    position: absolute;
    top: 10%;
    left: calc(50% + 150px);
+   @media only screen and (max-width: 1200px) {
+      width: 250px;
+  }
+  @media only screen and (max-width: 800px) {
+   width: 200px;
+}
+@media only screen and (max-width: 440px) {
+   width: 100px;
+   left: 70%;
+}
+   
 }
 
 .LoginPage-goorm2{ /* login 작은 구름 */
    position: absolute;
    top: calc(10% + 550px);
    right: calc(50% + 250px);
+   @media only screen and (max-width: 1200px) {
+      width: 150px;
+  }
+  @media only screen and (max-width: 440px) {
+   width: 75px;
+   left: 3vw;
+}
 }
 
 .LoginPage-nav { /* login 내비게이션 */
@@ -45,6 +63,13 @@
    border: 1px solid #AAB3FF;
    box-shadow: 0px 0px 25px 7px rgba(170, 179, 255, 0.30);
    font-family: 'Pretendard';
+   @media only screen and (max-width: 800px) {
+      width: 500px;
+  }
+  @media only screen and (max-width: 440px) {
+   width: 300px;
+}
+
 }
 
 .loginBox-title{ /* 로그인 */
@@ -52,6 +77,12 @@
    color:  #000958;
    font-size: 28px;
    font-weight: 700;
+   @media only screen and (max-width: 800px) {
+      font-size: 20px;
+  }
+  @media only screen and (max-width: 440px) {
+   font-size: 16px;
+}
 }
 
 .loginBox-contents{ /* 아이디, 비밀번호 */
@@ -59,6 +90,12 @@
    color: #000958;
    font-size: 16px;
    font-weight: 600;
+   @media only screen and (max-width: 800px) {
+      font-size: 14px;
+  }
+  @media only screen and (max-width: 440px) {
+   font-size: 12px;
+}
 }
 
 .login-tf{ /* login id input */
@@ -69,6 +106,9 @@
    border-radius: 16px;
    border: 1px solid #AAB3FF;
    box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
+   @media only screen and (max-width: 440px) {
+      width: 250px
+   }
 }
 .login-tf img{ 
    width: 19px;
@@ -84,6 +124,10 @@
    font-family: 'Pretendard';
    font-size: 16px;
    font-weight: 500;
+   @media only screen and (max-width: 440px) {
+      width:190px ;
+   }
+  
 }
 
 .check{
@@ -145,10 +189,15 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   overflow: hidden;
 }
 
 .register-svg{
    height: 925px;
+   @media only screen and (max-width: 800px) {
+      width: 500px;
+      visibility: hidden;
+   }
 }
 
 .register-box{
@@ -160,12 +209,25 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+@media only screen and (max-width: 800px) {
+   width: 500px;
+}
+@media only screen and (max-width: 440px) {
+width: 300px;
+}
+
 }
 
 .register-title{
 color:  #000958;
 font-size: 28px;
 font-weight: 700;
+@media only screen and (max-width: 800px) {
+   font-size: 20px;
+}
+@media only screen and (max-width: 440px) {
+font-size: 16px;
+}
 }
 
 .register-tf{ 
@@ -177,6 +239,12 @@ height: 58px;
 border-radius: 16px;
 border: 1px solid #AAB3FF;
 box-shadow: 0px 0px 10px 0px rgba(170, 179, 255, 0.40);
+@media only screen and (max-width: 800px) {
+   width: 250px
+}
+@media only screen and (max-width: 440px) {
+   width: 250px
+}
 }
 
 .register-tf input{
@@ -188,6 +256,12 @@ color: #000958;
 font-family: 'Pretendard';
 font-size: 16px;
 font-weight: 500;
+@media only screen and (max-width: 800px) {
+   width: 200px
+}
+@media only screen and (max-width: 440px) {
+   width: 200px
+}
 }
 
 .registerBtn{ 
@@ -271,9 +345,6 @@ font-weight: 600;
 }
 
 .MyPage-main{
-   position: absolute;
-   left: calc(50% - 400px);
-   top: calc(42vh + 290px);
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -282,13 +353,20 @@ font-weight: 600;
 
 /* 부작용 */
 .Mypage-se{
-   display: relative;
+   margin-top: 80vh;
    width: 800px;
    min-height: 245px;
    border-radius: 16px;
    border: 1px solid #AAB3FF;
    background: #FFF;
    box-shadow: 0px 0px 25px 7px rgba(170, 179, 255, 0.30);
+   @media only screen and (max-width: 800px) {
+      width: 100%;
+      margin-left: 6%
+     }
+     @media only screen and (max-width: 440px) {
+      margin-left: 1%;
+     }
 }
 
 .Mypage-se-title{
@@ -327,6 +405,7 @@ font-weight: 600;
    font-size: 8px;
    line-height: 10px;
    color: #FFFFFF;
+
 }
 .Mypage-se-img{
    position: absolute;
@@ -334,7 +413,10 @@ font-weight: 600;
    gap: 27px;
    margin-left: 8px;
    margin-bottom: 12px;
-   width: 100%;
+   @media only screen and (max-width: 440px) {
+      gap:3.25vw;
+   }
+   
 }
 .Mypage-se-content-title{
    display: flex;
@@ -362,10 +444,17 @@ font-weight: 600;
    border: 1px solid #AAB3FF;
    background: #FFF;
    box-shadow: 0px 0px 25px 7px rgba(170, 179, 255, 0.30);
+   @media only screen and (max-width: 800px) {
+      width: 100%;
+      margin-left: 6%
+     }
+     @media only screen and (max-width: 440px) {
+      margin-left: 1%;
+     }
  }
  
  .Mypage-caution-container { 
-   width: 956px;
+   width: 100%;
  }
  
  .Mypage-caution-img { /*약 성분 사진*/
@@ -380,6 +469,11 @@ font-weight: 600;
    background: #F6F6F6;
    box-shadow: 6px 6px 14px 0px rgba(0, 0, 0, 0.25) inset;
    cursor: pointer;
+   @media only screen and (max-width: 440px) {
+     width: 100px;
+     height: 100px;
+     margin-left: 25px;
+     }
 }.Mypage-caution-img img{
    width: inherit;
    height: inherit;
@@ -387,7 +481,6 @@ font-weight: 600;
 }
  
  .Mypage-caution-content { /*약 이름 + 주의사항 컨테이너*/
-   width: 760px;
    margin-left: 210px;
 
  }
@@ -418,6 +511,10 @@ font-weight: 600;
    font-style: normal;
    font-weight: 500;
    line-height: 25px;
+   @media only screen and (max-width: 440px) {
+      margin-left: -50px;
+      width: 60vw;
+     }
 }
 
 .Modal {

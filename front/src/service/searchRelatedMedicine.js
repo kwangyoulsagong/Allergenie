@@ -5,7 +5,7 @@ const searchRelatedMedicine = async (medicineId) => {
       `https://port-0-allergenie-199u12dls2shgxu.sel5.cloudtype.app/api/v1/home/medicine/${medicineId}`,
       {
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "applicaiton/json",
         },
       }
     );

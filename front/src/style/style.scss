@@ -4,20 +4,34 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
 }
 /* 로고에 대한 스타일 */
 .Logo {
     position: absolute;
-    width: 80px;
-    height: 60px;
+    width: 3.5vw;
+    height:10vh;
     top: 30px;
     left: 5%;
 }
 .MedGuideContainer{
     position: absolute;
-    margin-top: 60vw;
+    top: 60vw;
     width:100%;
     height: 100vh*0.5;
+    @media only screen and (max-width: 1400px) {
+        top: 60vw;
+     }
+     @media only screen and (max-width: 1200px) {
+        top: 90vw;
+     }
+     @media only screen and (max-width: 800px) {
+        top: 90vw;
+     }
+     @media only screen and (max-width: 440px) {
+        top: 60vh;
+     }
+    
 
 }
 /* 구름 배경에 대한 스타일 */
@@ -51,6 +65,10 @@ display: flex;
 align-items: center;
 
 color: #FFFFFF;
+@media only screen and (max-width: 800px) {
+    font-size: 20px;
+    margin-top: 2vh;
+ }
 
 
 }
@@ -70,6 +88,10 @@ line-height: 66px;
 display: flex;
 align-items: center;
 color: #FFFFFF;
+@media only screen and (max-width: 800px) {
+    font-size: 20px;
+    margin-top: 6vh;
+ }
 }
 .Allergenie_Text{
     /* Allergenie */
@@ -88,6 +110,10 @@ color: #FFFFFF;
     display: flex;
     align-items: center;
     color: #FFFFFF;
+    @media only screen and (max-width: 800px) {
+        font-size: 20px;
+        margin-top: 10vh;
+     }
 
 
 }
@@ -115,7 +141,10 @@ letter-spacing: -0.05em;
 
 /* g 3 */
 color: #DFDFDF;
-
+@media only screen and (max-width: 800px) {
+    font-size:5px;
+    margin-top: 17vh;
+ }
 
 }
 .goorm1 {
@@ -196,8 +225,8 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 .search {
     box-sizing: border-box;
     position: absolute;
-    width: 550px;
-    height: 40px;
+    width: 36.5vw;
+    height: 5vh;
     max-width: 90vw;
     top: 20%;
     left: 50%;
@@ -205,28 +234,50 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
     background: #FFFFFF;
     border: 1px solid #AAB3FF;
     box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
-    border-radius: 10px;
+    border-radius: 0.75vw;
     z-index: 4;
+    @media only screen and (max-width: 1200px) {
+        height: 5vh;
+        border-radius: 5px;
+     }
+     @media only screen and (max-width: 1100px) {
+        height: 2.5vh;
+        border-radius: 5px;
+     }
+    @media only screen and (max-width: 440px) {
+        top: 14.5%;
+        width: 60vw;
+        height: 2.5vh;
+        border-radius: 5px;
+     }
 }
 
 /* 검색 바 입력에 대한 스타일 */
 .searchbar {
     position: absolute;
-    left: calc(50% - 215px);
+    left: 35vw;
+    
     top: 17.5%;
-    width: 490px;
-    height: 40px;
+    width: 29vw;
+    height: 5vh;
     border-radius: 16px;
     border: none;
     background: transparent;
     font-family: Pretendard;
-    font-size: 14px;
+    font-size: 0.8vw;
     font-weight: 600;
     line-height: 17px;
     letter-spacing: 0em;
     text-align: left;
     outline: 0;
     z-index: 4;
+    @media only screen and (max-width: 440px) {
+        top: 13.2%;
+        width: 50vw;
+        left: 25vw;
+        font-size: 2vw;
+        height: 2.5vh;
+     }
 }
 .CompletionContainer{
 /* Rectangle 51 */
@@ -234,11 +285,11 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 box-sizing: border-box;
 
 position: absolute;
-width: 550px;
-height: 198px;
+width: 36.5vw;
+height: 27vh;
 left: 50%;
 transform: translate(-50%, -50%);
-top: 250px;
+top: 33.5vh;
 
 background: #FFFFFF;
 /* main color */
@@ -246,16 +297,29 @@ border: 1px solid #AAB3FF;
 box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
 border-radius: 16px;
 z-index: 3;
+@media only screen and (max-width: 1200px) {
+  top: 31%;
+ }
+ @media only screen and (max-width: 1000px) {
+    top: 32%;
+   }
+ @media only screen and (max-width: 800px) {
+    top: 33%;
+   }
+@media only screen and (max-width: 440px) {
+    top: 27%;
+    width: 60vw
+ }
 
 }
 .autocomplete-list {
     /* 항 히스타민제 */
     position: relative;
     width: 100%;
-    height: 18px;
+    height: inherit;
     top: 20px;
     left: -35px;
-    margin-left: calc(50% - 240px);
+    margin-left: 2.5vw;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 600;
@@ -285,31 +349,45 @@ z-index: 3;
 /* 의료 아이콘에 대한 스타일 */
 .MedIcon {
     position: absolute;
-    width: 29px;
+    width: 1.8vw;
+    height: 4vh;
+    left: 32vw;
     top: 18%;
-    left: calc(50% - 265px);
     z-index: 4;
+    @media only screen and (max-width: 440px) {
+        top: 12.5%;
+        left: 21vw;
+     }
 }
 
 /* 검색바  선에 대한 스타일 */
 .line {
     position: absolute;
-    width: 27px;
-    height: -30px;
-    left: calc(50% - 240px);
+    width: 1.75vw;
+    height: -3vh;
+    left: 33.5vw;
     top: 20%;
     border: 0.5px solid #AAB3FF;
     transform: rotate(90deg);
     z-index: 4;
+    @media only screen and (max-width: 440px) {
+        top: 14.5%;
+        left: 22.5vw;
+     }
 }
 
 /* 검색 아이콘에 대한 스타일 */
 .searchIcon {
     position: absolute;
     top: 18.5%;
-    right: calc(50% - 257.5px);
-    width: 22.5px;
+    right: 32vw;
+    width: 1.5vw;
+    height: 3vh;
     z-index: 4;
+    @media only screen and (max-width: 440px) {
+        top: 13%;
+        right: 21vw;
+     }
 }
 
 
@@ -334,6 +412,11 @@ text-align: right;
 
 /* snb color 2 */
 color: #000958;
+@media only screen and (max-width: 440px) {
+    left:50%;
+    font-size: 12px;
+    
+  }
 
 
 }
@@ -342,7 +425,7 @@ color: #000958;
 
 position: absolute;
 width: 680px;
-height: 200px;
+height: 27.5vh;
 left: calc(50% - 680px/2 + 10px);
 margin-top: 12.5vh;
 
@@ -350,6 +433,17 @@ background: url("../img/mainp1.svg");
 background-size: cover;
 background-repeat: no-repeat;
 border-radius: 16px;
+@media only screen and (max-width: 1200px) {
+
+    
+  }
+
+@media only screen and (max-width: 440px) {
+   width: 80vw;
+   left: 10%;
+   
+ }
+
 }
 .medGuideBox1 h1{
     /* 약은 물과 함께, */
@@ -370,8 +464,34 @@ align-items: center;
 text-align: right;
 
 color: #FFFFFF;
+@media only screen and (max-width: 440px) {
+    width: 80vw;
+    left:60%;
+    font-size: 20px;
+    
+  }
 
 
+}
+.guidimg1{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    @media only screen and (max-width: 440px) {
+        top: 45px;
+        left: 37.5%;
+        
+      }
+}
+.guidimg2{
+    position: absolute;
+    top: 50px;
+    left: 56%;
+    @media only screen and (max-width: 440px) {
+        top: 45px;
+        left: 47.5%;
+        
+      }
 }
 .medGuideBox1 span{
     /* 약은 물과 함께 복용하는 것이 가장 좋습니다. 물과 함께 마시면 약을 녹여 흡수를 돕고, 식도나 위에 달라붙지 않도록 해요. 또한 위장장애의 위험도 줄일 수 있어요. */
@@ -392,7 +512,13 @@ align-items: center;
 text-align: right;
 
 color: #FFFFFF;
-
+@media only screen and (max-width: 440px) {
+    left:2%;
+    width: 75vw;
+    text-align: left;
+    font-size: 12px;
+    
+  }
 
 }
 .goormGuide{
@@ -407,6 +533,14 @@ margin-top:-1vh;
 background: url("../img/goormguide.svg");
 filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
 background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
+@media only screen and (max-width: 440px) {
+    top: 10%;
+    left:2%;
+    width: 150px;
+    height: 100px;
+
+    
+  }
 transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 
 }
@@ -415,7 +549,7 @@ transform-origin: center center; /* 회전 중심을 가운데로 조정 */
 
 position: absolute;
 width: 680px;
-height: 200px;
+height: 27.5vh;
 left: calc(50% - 250px/2 - 205px);
 margin-top: 42.5vh;
 
@@ -424,7 +558,49 @@ background-size: cover;
 background-repeat: no-repeat;
 border-radius: 16px;
 
+@media only screen and (max-width: 440px) {
+    width: 80vw;
+    left: 10%;
+    
+  }
 
+}
+.guidimg3{
+    position: absolute;
+    top: 45px;
+    left: 42.5%;
+    @media only screen and (max-width: 440px) {
+        top: 39px;
+        left: 50%;
+        
+      }
+}
+.medGuideBox2 h1{
+    margin-top: 55px;
+    margin-left:5% ;
+    color: #FFFFFF;
+    @media only screen and (max-width: 440px) {
+        font-size: 20px;
+        
+      }
+}
+.medGuideBox2 span{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 5%;
+    color: #FFFFFF;
+    width: 500px;
+    font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 13px;
+line-height: 19px;
+display: flex;
+align-items: center;
+text-align: left;
+@media only screen and (max-width: 440px) {
+    width: 75vw;
+  }
 }
 
 .goormGuideFooter{
@@ -440,13 +616,31 @@ background: url("../img/goormguidefooter.svg");
 filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
 background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
 transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+@media only screen and (max-width: 440px) {
+    left: 60%;
+    
+  }
 
 }
 .MedKnowledgeContainer{
     position: absolute;
+    margin-left: 2vw;
     margin-top:42.5vw;
-    width:100%;
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     height: 100vh*0.5;
+    @media only screen and (max-width: 1400px) {
+        margin-top:42.5vw;
+     }
+     @media only screen and (max-width: 1200px) {
+        margin-top:62.5vw;
+     }
+     @media only screen and (max-width: 440px) {
+        margin-top:62.5vw;
+        margin-left: 4vw;
+     }
 }
 .MedKnowledge{
     /* 구름 상식 */
@@ -468,35 +662,110 @@ align-items: center;
 
 /* snb color 2 */
 color: #000958;
+@media only screen and (max-width: 440px) {
+    left: 0;
+ }
 
 
 }
 .KnowledgeBox1{
     /* Group 442 */
-
-position: absolute;
-width: 22vw;
+width: 330px;
 height: 200px;
-left: 28.5vw;
+display: flex;
+flex-direction: column;
+align-items: center;
 margin-top: 117.5vh;
+justify-content: center;
 background: url("../img/mainp3.svg");
 background-size: cover;
 background-repeat: no-repeat;
+color: #FFF;
 border-radius: 16px;
+@media only screen and (max-width: 1200px) {
 
+ }
+ @media only screen and (max-width: 800px) {
+
+ }
+ @media only screen and (max-width: 440px) {
+    height: 125px;
+ }
+
+
+}
+.KnowledgeBox1 h1{
+    font-size: 18px;
+    @media only screen and (max-width: 440px) {
+        font-size: 13px;
+     }
+    
+}
+.KnowledgeBox1 div{
+    font-size: 40px;
+    font-weight: bold;
+    @media only screen and (max-width: 440px) {
+        font-size: 30px;
+     }
+}
+.KnowledgeBox1 span{
+    font-size: 14px;
+    text-align: center;
+    width: 200px;
+    @media only screen and (max-width: 440px) {
+        font-size: 10px;
+    }
+}
+.KnowledgeBox2 h1{
+    font-size: 18px;
+    width: 200px;
+    text-align: center;
+    @media only screen and (max-width: 440px) {
+        font-size: 13px;
+        width: 150px;
+        text-align: center;
+     }
+    
+}
+.KnowledgeBox2 div{
+    font-size: 40px;
+    font-weight: bold;
+    @media only screen and (max-width: 440px) {
+        font-size: 30px;
+     }
+}
+.KnowledgeBox2 span{
+    font-size: 14px;
+    text-align: center;
+    width: 200px;
+    @media only screen and (max-width: 440px) {
+        font-size: 10px;
+    }
 }
 .KnowledgeBox2{
     /* Group 445 */
 
-position: absolute;
-width: 22vw;
+width: 330px;
 height: 200px;
-left: 51.5vw;
 margin-top: 117.5vh;
+display: flex;
+color: #FFF;
+justify-content: center;
+flex-direction: column;
+align-items: center;
 background: url("../img/mainp4.svg");
 background-size: cover;
 background-repeat: no-repeat;
 border-radius: 16px;
+@media only screen and (max-width: 1200px) {
+ }
+ @media only screen and (max-width: 800px) {
+
+ }
+ @media only screen and (max-width: 440px) {
+    height: 125px;
+ }
+
 
 }
 
@@ -513,23 +782,41 @@ background: url("../img/KnowledgeGoorm.svg");
 filter: drop-shadow(4px 4px 10px rgba(0, 9, 88, 0.2));
 background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
 transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+@media only screen and (max-width: 440px) {
+    margin-top: 128vh;
+    left: 0;
+    width: 90px;
+    height: 60px;
+ }
 }
 .Footer{
 
 position: absolute;
-width: 100vw;
+width: 100%;
 height: 80px;
 
 /* sub color 1 */
 background: #DBE3FF;
 box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
+@media only screen and (max-width: 1100px) {
+    position: absolute;
+  bottom: -150vh;
+ }
+@media only screen and (max-width: 800px) {
+    position: absolute;
+  bottom: -120vh;
+ }
+@media only screen and (max-width: 440px) {
+    position: absolute;
+  bottom: -100vh;
+ }
 
 }
 .Footer_Text{
     /* 이용약관 | 개인정보처리방침 | 책임의 한계와 법적고지 | 회원정보 고객센터AllerGenie Copyright @ ALLERGENIE Corp. All Rights Reserved */
 
 position: absolute;
-width: 100vw;
+width: 100%;
 height: 54px;
 display: flex;
 justify-content: center;
@@ -548,49 +835,64 @@ text-align: center;
 color: #000958;
 
 }
-.top-info{
-    /* 상단 정보 */
-    position: absolute;
-    width: 333px;
-    height: 45px;
-    right: calc(50% - 650px);
-    top: 40px;
-}
-
 
 .Profile_picture{
     /* 프로필 사진 */
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    right: calc(50% - 360px);
-    top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    border-radius: 50%;
 }
 .Profile_Avatar{
     /* 구름캐릭터_대지 1_대지 1 2 */
-
 position: absolute;
+margin-top: 3vh;
+margin-left: 0.6vw;
 width: 85px;
 height: 85px;
-right: calc(50% - 385px);
-top: 32.5px;
 
 background: url("../img/goormAvatar.svg");
 filter: drop-shadow(4px 4px 20px rgba(0, 9, 88, 0.2));
 background-size: contain; /* 이미지가 컨테이너에 맞도록 조정 */
 transform-origin: center center; /* 회전 중심을 가운데로 조정 */
+background-repeat: no-repeat;
+@media only screen and (max-width: 1400px) {
+    margin-left: 0.75vw;
+    margin-top: 2vh;
+ }
+ @media only screen and (max-width: 1200px) {
+    margin-left: 0.75vw;
+    margin-top: 3vh;
+ }
+@media only screen and (max-width: 1100px) {
+    margin-left: 1vw;
+    margin-top: 1.75vh;
+ }
+@media only screen and (max-width: 1000px) {
+    margin-left: 1.25vw;
+    margin-top: 2vh;
+ }
+@media only screen and (max-width: 800px) {
+    margin-left: 1vw;
+    margin-top: 2.5vh;
+ }
+
+@media only screen and (max-width: 440px) {
+    margin-left: 2.1vw;
+    margin-top: 2.5vh;
+ }
+
 
 }
 .Ellipse{
     /* Ellipse 35 */
 
 box-sizing: border-box;
-
-position: absolute;
+display: flex;
+justify-content: center;
 width: 45px;
 height: 45px;
-right: calc(50% - 360px);
-top: 40px;
 border-radius: 50%;
 
 background: linear-gradient(180deg, #DFDFDF 0%, rgba(217, 217, 217, 0) 100%);
@@ -599,11 +901,6 @@ border: 2px solid #000958;
 
 }
 .greetings {
-    position: absolute;
-    width: 150px;
-    height: 19px;
-    right: calc(50% - 515px);
-    top: 52px;
   
     font-family: 'Pretendard';
     font-style: normal;
@@ -619,6 +916,9 @@ border: 2px solid #000958;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    @media only screen and (max-width: 440px) {
+        font-size: 8px;
+    }
   }
   
   .word2 {
@@ -627,16 +927,14 @@ border: 2px solid #000958;
     font-weight: 600;
     font-size: 12px;
     line-height: 10px;
+    @media only screen and (max-width: 440px) {
+        font-size: 8px;
+    }
   }
 
 .my-page{
     /* 마이페이지 */
 
-    position: absolute;
-    width: 61px;
-    height: 17px;
-    right: calc(50% - 560px);
-    top: 54px;
 
     font-family: 'Pretendard';
     font-style: normal;
@@ -649,20 +947,25 @@ border: 2px solid #000958;
     text-align: center;
 
     color: #000000;
+    @media only screen and (max-width: 440px) {
+        font-size: 8px;
+    }
 }
 .nav{
     position: absolute;
-    right: 700px;
+    top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    right: 10px;
 }
 .logout{
 
     /* 로그아웃 */
 
-    position: absolute;
     width: 49px;
     height: 17px;
-    right: calc(50% - 630px);
-    top: 54px;
 
     font-family: 'Pretendard';
     font-style: normal;
@@ -675,17 +978,17 @@ border: 2px solid #000958;
     text-align: center;
 
     color: #000000;
+    @media only screen and (max-width: 440px) {
+        width: 30px;
+        font-size: 8px;
+    }
 }
 
 .line-16{
     /* Line 16 */
 
-    position: absolute;
     width: 20px;
     height: 0px;
-    right: calc(50% - 500px);
-    top: 62.5px;
-
     border: 0.5px solid #000000;
     transform: rotate(90deg);
 }
@@ -693,11 +996,9 @@ border: 2px solid #000958;
 .line-17{
     /* Line 17 */
 
-    position: absolute;
+
     width: 20px;
     height: 0px;
-    right: calc(50% - 580px);
-    top: 62.5px;
 
     border: 0.5px solid #000000;
     transform: rotate(90deg);
@@ -716,6 +1017,9 @@ top: -40px;
 /* snb color 2 */
 background: #000958;
 border-radius: 30px;
+@media only screen and (max-width: 440px) {
+    left :0;
+}
 
 }
 .AllergicAdd span{
@@ -761,7 +1065,13 @@ align-items: center;
 
 /* main color */
 color: #000;
-
+ @media only screen and (max-width: 800px) {
+    left: 0;
+    
+}
+@media only screen and (max-width: 440px) {
+    width: 300px;
+}
 
 }
 .plus-circle{
@@ -788,6 +1098,10 @@ background: #FFFFFF;
 border: 1px solid #AAB3FF;
 box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
 border-radius: 16px;
+@media only screen and (max-width: 440px) {
+    width: 300px;
+    margin-left: 15%;
+}
 }
 .highlighted-mark {
     color: #AAB3FF; /* or any other color you want */
@@ -819,12 +1133,23 @@ color: #000;
 position: absolute;
 width: 178px;
 height: 19px;
-left: 48vw;
-top: 1225px;
+left: 52.5%;
+transform: translate(-50%, -50%);
+top: 1300px;
 display: flex;
 gap: 10px;
 
 color: #000000;
+@media only screen and (max-width: 1100px ) {
+    top: 1400px;
+
+}
+@media only screen and (max-width: 800px) {
+
+}
+@media only screen and (max-width: 440px) {
+    left: 57.5%;
+}
 
 }
 .MedIngredientsInfoList{
@@ -844,6 +1169,9 @@ align-items: center;
 
 /* main color */
 color: #000;
+@media only screen and (max-width: 440px) {
+    width: 274px;
+}
 
 
 }
@@ -863,7 +1191,10 @@ background: #FFFFFF;
 border: 1px solid #AAB3FF;
 box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
 border-radius: 16px;
-
+@media only screen and (max-width: 440px) {
+    width: 100%;  
+    left: 0;
+}
 }
 .MedTitle{
     /* 항 히스타민제 */
@@ -942,6 +1273,10 @@ display: flex;
 align-items: center;
 
 color: #000000;
+@media only screen and (max-width: 440px) {
+   width: 260px;
+   line-height: 12.5px;
+}
 
 
 }
@@ -1001,7 +1336,10 @@ display: flex;
 align-items: center;
 
 color: #000000;
-
+@media only screen and (max-width: 440px) {
+    width: 260px;
+    line-height: 12.5px;
+ }
 
 }
 .MedImageContainer{
@@ -1021,6 +1359,12 @@ background: #FFFFFF;
 border: 1px solid #DFDFDF;
 box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.2);
 border-radius: 16px;
+@media only screen and (max-width: 440px) {
+    top: 25%;
+    width: 100px;
+    height: 100px;
+    left: 3%;
+ }
 
 }
 .MedImageContainer img{
@@ -1045,7 +1389,10 @@ background: #FFFFFF;
 border: 1px solid #AAB3FF;
 box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
 border-radius: 16px;
-
+@media only screen and (max-width: 440px) {
+    width: 100%;  
+    left: 0;
+}
 }
 .RelationMedInfo{
     /* 관련 약 정보 */
@@ -1066,6 +1413,10 @@ align-items: center;
 
 /* snb color 2 */
 color: #000958;
+@media only screen and (max-width: 440px) {
+
+    left: 3%;
+}
 
 
 }
@@ -1084,13 +1435,18 @@ background: #FFFFFF;
 border: 1px solid #DFDFDF;
 box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.2);
 border-radius: 16px;
+@media only screen and (max-width: 440px) {
+    width: 75px;
+    height: 75px;
+    left: 0;
+}
  
 }
 .RelationImg{
     margin-left: 2.5px;
     margin-top: 10px;
-    width: 100px;
-    height: 80px;
+    width: 94%;
+    height: 55px;
 }
 .RelationMedTitle{
     /* Rectangle 82 */
@@ -1102,6 +1458,9 @@ margin-top: 20px;
 /* main color */
 background: #AAB3FF;
 border-radius: 30px;
+@media only screen and (max-width: 440px) {
+    margin-left: 12.5px;
+}
 }
 .RelationMedTitle span{
     /* 지르텍 */
@@ -1140,6 +1499,10 @@ background: #FFFFFF;
 border: 1px solid #AAB3FF;
 box-shadow: 0px 0px 10px rgba(170, 179, 255, 0.4);
 border-radius: 16px;
+@media only screen and (max-width: 440px) {
+    width: 100%;  
+    left: 0;
+}
 
 }
 .sideEffectText{
@@ -1161,6 +1524,9 @@ align-items: center;
 
 /* snb color 2 */
 color: #000958;
+@media only screen and (max-width: 440px) {
+    left: 2%;
+}
 
 
 }
@@ -1168,20 +1534,30 @@ color: #000958;
     position: absolute;
     margin-top: 9vh;
     margin-left: 7.5%;
-    width: 100%;
     display: flex;
     gap: 35px;
 }
 .sideEffectImgContainer img{
     width: 30px;
+    @media only screen and (max-width: 440px) {
+        width: 6.75vw;
+        gap: 3vw;
+
+    }
+
+    
 }
 .sideEffectTypeContainer{
     position: absolute;
-    width: 100%;
     display: flex;
     top: 110px;
     gap: 16px;
     margin-left: 28px;
+    @media only screen and (max-width: 440px) {
+        top: 120px;
+        gap: 4.5vw;
+
+    }
 
 }
 .sideEffectType{
@@ -1198,6 +1574,9 @@ color: #000958;
     font-size: 8px;
     line-height: 10px;
     color: #FFFFFF;
+    @media only screen and (max-width: 440px) {
+        width: 10.5vw;
+    }
 }
 .sideEffectInfo{
     /* 약물의 종류에 따라 정도가 다르지만 대표적인 부작용은 졸음, 진정작용과 같은 중추신경계 부작용이다. */
@@ -1215,6 +1594,8 @@ color: #000958;
     display: flex;
     align-items: center;
     color: #000000;
+    @media only screen and (max-width: 440px) {
+    }
 }
 .sideEffectWarning{
     /* 주의사항 & 해결방안 */
@@ -1232,6 +1613,9 @@ color: #000958;
     align-items: center;
     /* snb color 2 */
     color: #000958;
+    @media only screen and (max-width: 440px) { 
+        left: 2%;
+    }
 }
 .sideEffectWarningInfo{
     /* 자동차 운전이나 위험을 수반하는 기계조작, 집중을 요하는 작업에 종사하는 사람들은 복용하지 않도록 한다. 항콜린 작용에 의한 배뇨 및 시력장애가 나타날 수 있으므로 전립선비대증 환자나 녹내장 환자에게는 투여하지 않도록 한다. 중추신경억제제 또는 항콜린성 약물과 병용투여 시 용량 조절이 요구될 수 있다. 졸음, 진정작용과 같은 중추신경계 부작용이 증가될 수 있으므로 항히스타민제 복용 시 알코올을 섭취하지 않도록 한다. */
@@ -1251,6 +1635,10 @@ color: #000958;
     align-items: center;
 
     color: #000000;
+    @media only screen and (max-width: 440px) { 
+        width: 95%;
+        left: 2%;
+    }
 }
 //마이페이지
 .MyIcon{
@@ -1275,6 +1663,13 @@ background: linear-gradient(180deg, #DFDFDF 0%, rgba(217, 217, 217, 0) 100%);
 border: 2px solid #AAB3FF;
 border-radius: 50%;
 box-shadow: inset 6px 4px 8px rgba(0, 0, 0, 0.2);
+@media only screen and (max-width: 800px) {
+    left: 2%;
+   }
+   @media only screen and (max-width: 440px) {
+    top: 15%;
+    left: 7%;
+   }
 
 }
 .MyIcon img{
@@ -1302,6 +1697,11 @@ align-items: center;
 
 /* snb color 2 */
 color: #000958;
+@media only screen and (max-width: 440px) {
+    margin-top:62.5%;
+    margin-left: 15%;
+    font-size: 20px;
+   }
 
 
 }
@@ -1331,7 +1731,11 @@ align-items: center;
 text-align: center;
 
 color: #FFFFFF;
-
+@media only screen and (max-width: 800px) {
+    top: 5%;
+    left: 20%;
+    width: 200px;
+   }
 
 }
 .MedShouldNotTakeContainer{
@@ -1345,6 +1749,10 @@ color: #FFFFFF;
     border: 1px solid #AAB3FF;
     background: #FFF;
     box-shadow: 0px 0px 25px 7px rgba(170, 179, 255, 0.30);
+    @media only screen and (max-width: 800px) {
+        width: 100%;
+        left: 1%;
+       }
 }
 .MedShouldNotTakeContainer h1{
     position: absolute;
@@ -1361,6 +1769,7 @@ color: #FFFFFF;
     height: 100%;
     display: flex;
     gap: 2px;
+    
 }
 .addMedCircle{
    /* Rectangle 64 */
@@ -1419,6 +1828,9 @@ align-items: center;
 text-align: center;
 
 color: #FFFFFF;
+@media only screen and (max-width: 1100px) {
+  right: 0px;
+ }
 
 
 }
@@ -1454,7 +1866,9 @@ justify-content: center;
 color: #FFFFFF;
 
 cursor: pointer;
-
+@media only screen and (max-width: 1100px) {
+    right: 0px;
+   }
 
 }
 .deleteMed img{
